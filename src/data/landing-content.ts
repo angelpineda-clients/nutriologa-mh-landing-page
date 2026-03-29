@@ -52,8 +52,8 @@ export const hero = {
     href: "#contacto"
   },
   secondaryCta: {
-    label: "Conoce mi enfoque",
-    href: "#filosofia"
+    label: "Escríbeme por WhatsApp",
+    href: "https://wa.me/5213310803142?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20las%20consultas."
   }
 };
 
@@ -108,14 +108,14 @@ export const services: Service[] = [
     description:
       "Espacios educativos para equipos, comunidades o grupos que buscan bienestar con información útil y cercana.",
     cta: "Quiero saber más",
-    href: "#contacto"
+    href: "https://wa.me/5213310803142?text=Hola%2C%20me%20podr%C3%ADa%20dar%20informaci%C3%B3n%20acerca%20de%20las%20charlas%20y%20talleres."
   },
   {
     title: "Asesoría estudiantil",
     description:
       "Acompañamiento para estudiantes y profesionales en formación que quieren integrar una mirada más humana a la nutrición.",
     cta: "Quiero saber más",
-    href: "#contacto"
+    href: "https://wa.me/5213310803142?text=Hola%2C%20me%20podr%C3%ADa%20dar%20informaci%C3%B3n%20sobre%20la%20asesor%C3%ADa%20estudiantil%2C%20por%20favor."
   }
 ];
 
