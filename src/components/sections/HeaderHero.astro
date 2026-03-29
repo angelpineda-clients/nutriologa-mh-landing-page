@@ -16,7 +16,17 @@ import "../../styles/sections/header-hero.css";
   <div class="hero-shell__texture"></div>
   <header class="site-header shell" data-site-header>
     <div class="site-header__bar">
-      <a class="site-header__brand" href="#inicio">{hero.brand}</a>
+      <a class="site-header__brand" href="#inicio">
+        <img
+          class="site-header__brand-mark"
+          src="/favicon.svg"
+          alt=""
+          width="28"
+          height="28"
+          aria-hidden="true"
+        />
+        <span>{hero.brand}</span>
+      </a>
 
       <nav class="site-header__nav" aria-label="Principal">
         <ul>

@@ -42,11 +42,11 @@ export const navigation: NavItem[] = [
 
 export const hero = {
   brand: "Monserrat Herrera",
-  eyebrow: "nutriCion con conexion",
+  eyebrow: "Nutrición con conexión",
   headline:
-    "Nutrición clínica con enfoque humano para cuidar tu salud digestiva y metabólica.",
+    "Nutrición clínica con enfoque humano para cuidar tu salud digestiva y metabólica",
   paragraph:
-    "Permiteme guiarte a conocer tu cuerpo de tal manera que logres nutrirlo física, mental y socialmente, desde la libertad y la compasión, y así cuidar de tu bienestar con un abordaje 100% integral y personal",
+    "Permíteme guiarte para conocer tu cuerpo, de tal manera que logres nutrirlo física, mental y socialmente, desde la libertad y la compasión, y así cuidar tu bienestar con un abordaje 100% integral y personal.",
   primaryCta: {
     label: "Agendar",
     href: "#contacto"
@@ -58,46 +58,46 @@ export const hero = {
 };
 
 export const philosophy = {
-  label: "nutriCion Gentil",
+  label: "Nutrición gentil",
   title: "La salud sostenible empieza cuando tu alimentación se adapta a ti",
   paragraphs: [
-    "Basada en escuchar e interpretar las señales internas de tu cuerpo; en lugar de seguir reglas rígidas o dietas restrictivas.",
+    "Se basa en escuchar e interpretar las señales internas de tu cuerpo, en lugar de seguir reglas rígidas o dietas restrictivas.",
     "Nuestro objetivo no es perseguir reglas perfectas, sino construir una relación más clara, amable y realista con tu alimentación, tu cuerpo y tu bienestar.",
     "Adoptarás conductas saludables de autocuidado sin necesidad de enfocar la atención en el peso."
   ],
   aside:
-    "Cuando se alinean tu sentir, pensar y actuar, la nutrición deja de ser una obligación y se convierte en algo natural dentro"
+    "Cuando se alinean tu sentir, pensar y actuar, la nutrición deja de ser una obligación y se convierte en algo natural dentro de tu vida diaria."
 };
 
 export const processSteps: ProcessStep[] = [
   {
     number: "01",
     title: "A tu propio ritmo",
-    description: "Cada paso que demos será respetuoso a tu bienestar integral."
+    description: "Cada paso que demos respetará tu bienestar integral."
   },
   {
     number: "02",
     title: "Con escucha activa",
     description:
-      "Siente la seguridad que toda información nos guía en tu camino individual de la alimentación."
+      "Todo lo que compartas nos ayudará a comprender tu proceso y a acompañarte mejor."
   },
   {
     number: "03",
     title: "Propositiva",
     description:
-      "Adaptando las recomendaciones nutricionales según tus necesidades, entorno y acceso."
+      "Te ofreceré recomendaciones nutricionales adaptadas a tus necesidades, tu entorno y tu acceso."
   },
   {
     number: "04",
     title: "Respetuosa a la diversidad",
     description:
-      "Adaptando las recomendaciones nutricionales según tus necesidades, entorno y acceso."
+      "Tu proceso se construirá con respeto a tu historia, tu contexto y tu diversidad."
   }
 ];
 
 export const services: Service[] = [
   {
-    title: "Consulta online",
+    title: "Consulta en línea",
     description:
       "Sesiones personalizadas para salud digestiva, metabólica y cambio de hábitos.",
     cta: "Agendar",
@@ -126,7 +126,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "“A partir de las recomendaciones de Monse para ayudar en el tratamiento de síndrome de intestino irritable, me di cuenta de que mi alimentación podía ser mucho más variada, disfrutar de mi comida, y así sentirme bien” - Cointa, 79"
+      "“A partir de las recomendaciones de Monse para apoyar mi tratamiento de síndrome de intestino irritable, me di cuenta de que mi alimentación podía ser mucho más variada, disfrutar mi comida y así sentirme bien” - Cointa, 79"
   }
 ];
 
@@ -144,7 +144,7 @@ export const specialties: Specialty[] = [
 export const closingCta = {
   title: "¿Comenzamos?",
   paragraph:
-    "Nadie es más experto en tu historia de vida que tú mismo, por lo que mi propósito es ser una guía y acompañante en tu propio camino de salud",
+    "Nadie conoce tu historia de vida mejor que tú, por lo que mi propósito es ser una guía y acompañarte en tu propio camino de salud.",
   bullets: [
     "A tu propio ritmo",
     "Escucha activa",

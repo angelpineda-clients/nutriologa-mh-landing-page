@@ -61,11 +61,22 @@
 }
 
 .site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   justify-self: start;
   color: var(--color-text-deep);
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.04em;
+}
+
+.site-header__brand-mark {
+  display: block;
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
 }
 
 .site-header__nav ul {
