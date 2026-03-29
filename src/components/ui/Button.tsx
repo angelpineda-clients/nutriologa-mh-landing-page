@@ -1,5 +1,5 @@
 import type { AnchorHTMLAttributes, ReactNode } from "react";
-import { ArrowRight } from "lucide-react";
+import EastRoundedIcon from "@mui/icons-material/EastRounded";
 
 import "../../styles/ui/button.css";
 
@@ -24,7 +24,7 @@ export function Button({
   return (
     <a className={classes} href={href} {...props}>
       <span>{children}</span>
-      {icon ? <ArrowRight aria-hidden="true" size={18} strokeWidth={1.8} /> : null}
+      {icon ? <EastRoundedIcon aria-hidden="true" sx={{ fontSize: 18 }} /> : null}
     </a>
   );
 }

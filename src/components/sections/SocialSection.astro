@@ -1,5 +1,7 @@
 ---
-import { Instagram, MessageCircleMore, Music2 } from "lucide-react";
+import ChatBubbleRoundedIcon from "@mui/icons-material/ChatBubbleRounded";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import MusicNoteRoundedIcon from "@mui/icons-material/MusicNoteRounded";
 
 import { socialItems } from "../../data/landing-content";
 import { Reveal } from "../ui/Reveal";
@@ -19,15 +21,15 @@ import "../../styles/sections/social.css";
 
     <Reveal client:visible className="social__icons" delay={0.06}>
       <span class="social__icon-chip">
-        <Instagram aria-hidden="true" size={24} strokeWidth={1.8} />
+        <InstagramIcon aria-hidden="true" />
         <span class="sr-only">{socialItems[0].label}</span>
       </span>
       <span class="social__icon-chip">
-        <Music2 aria-hidden="true" size={24} strokeWidth={1.8} />
+        <MusicNoteRoundedIcon aria-hidden="true" />
         <span class="sr-only">{socialItems[1].label}</span>
       </span>
       <span class="social__icon-chip">
-        <MessageCircleMore aria-hidden="true" size={24} strokeWidth={1.8} />
+        <ChatBubbleRoundedIcon aria-hidden="true" />
         <span class="sr-only">{socialItems[2].label}</span>
       </span>
     </Reveal>

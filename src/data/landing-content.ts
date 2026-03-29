@@ -35,7 +35,6 @@ export const siteMeta = {
 };
 
 export const navigation: NavItem[] = [
-  { label: "Inicio", href: "#inicio" },
   { label: "Filosofía", href: "#filosofia" },
   { label: "Servicios", href: "#servicios" },
   { label: "Contacto", href: "#contacto" }
