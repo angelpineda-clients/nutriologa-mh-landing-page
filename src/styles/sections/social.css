@@ -1,0 +1,41 @@
+.social__panel {
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: calc(var(--radius-panel) - 0.3rem);
+  background:
+    linear-gradient(180deg, rgba(253, 252, 252, 0.72), rgba(244, 231, 216, 0.52)),
+    rgba(253, 252, 252, 0.6);
+  border: 1px solid rgba(176, 137, 104, 0.14);
+}
+
+.social__intro {
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.social__lead {
+  margin: 1rem auto 0;
+  max-width: 34rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.social__icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social__icon-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.15rem;
+  height: 4.15rem;
+  border-radius: 50%;
+  background: rgba(253, 252, 252, 0.9);
+  border: 1px solid rgba(176, 137, 104, 0.18);
+  color: var(--color-text-deep);
+  box-shadow: 0 18px 34px rgba(91, 77, 67, 0.08);
+}

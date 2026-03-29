@@ -1,0 +1,29 @@
+# Dependencies
+/node_modules
+
+# Build directory
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.codex
+
+# OS files
+.DS_Store
+Thumbs.db
+*.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Astro
+.astro/

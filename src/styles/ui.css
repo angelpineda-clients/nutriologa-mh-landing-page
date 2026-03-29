@@ -1,0 +1,4 @@
+:focus-visible {
+  outline: 2px solid rgba(160, 119, 84, 0.7);
+  outline-offset: 4px;
+}

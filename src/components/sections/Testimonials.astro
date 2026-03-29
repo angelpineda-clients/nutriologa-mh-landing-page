@@ -1,0 +1,24 @@
+---
+import { testimonials } from "../../data/landing-content";
+import { Reveal } from "../ui/Reveal";
+
+import "../../styles/sections/testimonials.css";
+---
+
+<section class="testimonials section">
+  <div class="shell testimonials__stack">
+    {
+      testimonials.map((item, index) => (
+        <Reveal
+          client:visible
+          className={["testimonial", index % 2 === 1 ? "testimonial--offset" : ""]
+            .filter(Boolean)
+            .join(" ")}
+          delay={0.05 * index}
+        >
+          <blockquote>{item.quote}</blockquote>
+        </Reveal>
+      ))
+    }
+  </div>
+</section>

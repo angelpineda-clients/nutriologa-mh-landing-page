@@ -1,0 +1,31 @@
+---
+import { philosophy } from "../../data/landing-content";
+import { Reveal } from "../ui/Reveal";
+
+import "../../styles/sections/philosophy.css";
+---
+
+<section class="philosophy shell section" id="filosofia">
+  <Reveal client:visible className="philosophy__copy">
+    <p class="section-label">{philosophy.label}</p>
+    <h2 class="section-title philosophy__title">{philosophy.title}</h2>
+
+    <div class="philosophy__paragraphs">
+      {philosophy.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </Reveal>
+
+  <Reveal client:visible className="philosophy__visual" delay={0.08} direction="left">
+    <div class="philosophy__image-wrap">
+      <img
+        class="philosophy__image"
+        src="/images/philosophy.jpg"
+        alt=""
+        loading="lazy"
+        width="640"
+        height="760"
+      />
+    </div>
+    <p class="philosophy__aside">{philosophy.aside}</p>
+  </Reveal>
+</section>

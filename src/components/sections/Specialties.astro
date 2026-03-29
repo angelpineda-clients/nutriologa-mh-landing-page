@@ -1,0 +1,30 @@
+---
+import { specialties } from "../../data/landing-content";
+import { Reveal } from "../ui/Reveal";
+
+import "../../styles/sections/specialties.css";
+---
+
+<section class="specialties section" id="especialidades">
+  <div class="shell">
+    <Reveal client:visible className="specialties__intro">
+      <p class="section-label">Temas de especialidad</p>
+      <h2 class="section-title">Podemos trabajar en temas como estos.</h2>
+      <p class="specialties__lead">
+        Si recibiste un diagnóstico, tienes síntomas digestivos o quieres una
+        evaluación nutricia integral, estos son algunos de los temas que podemos
+        revisar.
+      </p>
+    </Reveal>
+
+    <Reveal client:visible className="specialties__grid" delay={0.06}>
+      {
+        specialties.map((topic) => (
+          <span class="specialties__pill">{topic.label}</span>
+        ))
+      }
+    </Reveal>
+
+    <p class="specialties__footnote">*Revisemos tu caso en especifico</p>
+  </div>
+</section>

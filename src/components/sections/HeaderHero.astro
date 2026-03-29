@@ -1,0 +1,87 @@
+---
+import { Instagram, MessageCircleMore, Music2 } from "lucide-react";
+
+import { navigation, hero, socialItems } from "../../data/landing-content";
+import { Button } from "../ui/Button";
+import { Reveal } from "../ui/Reveal";
+
+import "../../styles/sections/header-hero.css";
+---
+
+<section class="hero-shell" id="inicio">
+  <div class="hero-shell__texture"></div>
+  <header class="site-header shell">
+    <a class="site-header__brand" href="#inicio">{hero.brand}</a>
+
+    <nav class="site-header__nav" aria-label="Principal">
+      <ul>
+        {
+          navigation.map((item, index) => (
+            <li>
+              <a
+                class:list={[
+                  "site-header__nav-link",
+                  index === 0 && "site-header__nav-link--active"
+                ]}
+                href={item.href}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <Button href={hero.primaryCta.href} className="site-header__cta">Agendar</Button>
+  </header>
+
+  <div class="hero shell">
+    <Reveal client:visible className="hero__content" delay={0.05}>
+      <p class="hero__eyebrow">{hero.eyebrow}</p>
+      <h1 class="hero__title">{hero.headline}</h1>
+      <p class="hero__body">{hero.paragraph}</p>
+
+      <div class="hero__actions">
+        <Button href={hero.primaryCta.href}>Agendar</Button>
+        <a class="hero__secondary-action" href={hero.secondaryCta.href}>
+          {hero.secondaryCta.label}
+        </a>
+      </div>
+    </Reveal>
+
+    <Reveal client:visible className="hero__media" delay={0.12} direction="left">
+      <div class="hero__portrait-frame">
+        <img
+          class="hero__portrait"
+          src="/images/hero-portrait.avif"
+          alt=""
+          loading="eager"
+          width="720"
+          height="920"
+        />
+      </div>
+
+      <ul class="hero__socials" aria-label="Redes sociales">
+        <li>
+          <span class="hero__social-chip">
+            <Instagram aria-hidden="true" size={18} strokeWidth={1.8} />
+            <span class="sr-only">{socialItems[0].label}</span>
+          </span>
+        </li>
+        <li>
+          <span class="hero__social-chip">
+            <Music2 aria-hidden="true" size={18} strokeWidth={1.8} />
+            <span class="sr-only">{socialItems[1].label}</span>
+          </span>
+        </li>
+        <li>
+          <span class="hero__social-chip">
+            <MessageCircleMore aria-hidden="true" size={18} strokeWidth={1.8} />
+            <span class="sr-only">{socialItems[2].label}</span>
+          </span>
+        </li>
+      </ul>
+    </Reveal>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+:root {
+  --color-bg: #fff8f1;
+  --color-surface: #fdf5ed;
+  --color-surface-strong: #f4e7d8;
+  --color-primary: #a07754;
+  --color-accent: #b08968;
+  --color-accent-soft: #bf9e82;
+  --color-text: #2c2a28;
+  --color-text-deep: #1f1d1b;
+  --color-text-muted: #5b4d43;
+  --color-line: rgba(58, 51, 44, 0.16);
+  --color-shadow: rgba(91, 77, 67, 0.12);
+  --font-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-body: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  --radius-pill: 999px;
+  --radius-card: 28px;
+  --radius-panel: 40px;
+  --shadow-soft: 0 22px 50px var(--color-shadow);
+  --shadow-button: 0 14px 28px rgba(160, 119, 84, 0.22);
+  --shell-width: min(1200px, calc(100% - 2.5rem));
+  --space-section: clamp(5rem, 8vw, 8rem);
+  --space-gap: clamp(1.5rem, 3vw, 2.5rem);
+  --texture:
+    radial-gradient(circle at 12% 18%, rgba(191, 158, 130, 0.24), transparent 24%),
+    radial-gradient(circle at 88% 12%, rgba(176, 137, 104, 0.15), transparent 18%),
+    radial-gradient(circle at 80% 82%, rgba(160, 119, 84, 0.1), transparent 22%);
+}

@@ -1,0 +1,48 @@
+---
+import { processSteps } from "../../data/landing-content";
+import { Button } from "../ui/Button";
+import { Reveal } from "../ui/Reveal";
+
+import "../../styles/sections/process.css";
+---
+
+<section class="process section" id="proceso">
+  <div class="shell process__inner">
+    <Reveal client:visible className="process__heading">
+      <h2 class="section-title process__title">¿Cómo será nuestro proceso juntos?</h2>
+    </Reveal>
+
+    <div class="process__grid">
+      <Reveal client:visible className="process__art" delay={0.06}>
+        <div class="process__art-frame">
+          <img
+            class="process__image"
+            src="/images/process.avif"
+            alt=""
+            loading="lazy"
+            width="660"
+            height="760"
+          />
+        </div>
+
+        <Button href="#contacto" className="process__cta">Agendar</Button>
+      </Reveal>
+
+      <Reveal client:visible className="process__steps" delay={0.1} direction="left">
+        <ol>
+          {
+            processSteps.map((step) => (
+              <li class="process-step">
+                <p class="process-step__number">{step.number}</p>
+                <div>
+                  <h3 class="process-step__title">{step.title}</h3>
+                  <p class="process-step__description">{step.description}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </Reveal>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+{
+  "name": "nutriologa-mh-landing-page",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.0",
+    "@fontsource/manrope": "^5.2.6",
+    "@fontsource/newsreader": "^5.2.6",
+    "astro": "^5.13.0",
+    "lucide-react": "^0.542.0",
+    "motion": "^12.23.12",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "typescript": "^5.9.2"
+  }
+}

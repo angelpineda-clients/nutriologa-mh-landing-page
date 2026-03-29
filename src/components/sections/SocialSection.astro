@@ -1,0 +1,35 @@
+---
+import { Instagram, MessageCircleMore, Music2 } from "lucide-react";
+
+import { socialItems } from "../../data/landing-content";
+import { Reveal } from "../ui/Reveal";
+
+import "../../styles/sections/social.css";
+---
+
+<section class="social section" id="social">
+  <div class="shell social__panel">
+    <Reveal client:visible className="social__intro">
+      <h2 class="section-title social__title">Más ideas y recursos en mis redes</h2>
+      <p class="social__lead">
+        Encuentra contenido cercano, educativo y práctico para seguir construyendo
+        bienestar fuera de consulta.
+      </p>
+    </Reveal>
+
+    <Reveal client:visible className="social__icons" delay={0.06}>
+      <span class="social__icon-chip">
+        <Instagram aria-hidden="true" size={24} strokeWidth={1.8} />
+        <span class="sr-only">{socialItems[0].label}</span>
+      </span>
+      <span class="social__icon-chip">
+        <Music2 aria-hidden="true" size={24} strokeWidth={1.8} />
+        <span class="sr-only">{socialItems[1].label}</span>
+      </span>
+      <span class="social__icon-chip">
+        <MessageCircleMore aria-hidden="true" size={24} strokeWidth={1.8} />
+        <span class="sr-only">{socialItems[2].label}</span>
+      </span>
+    </Reveal>
+  </div>
+</section>

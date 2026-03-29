@@ -1,0 +1,34 @@
+---
+import { footerLinks, hero } from "../../data/landing-content";
+import { Button } from "../ui/Button";
+
+import "../../styles/sections/footer.css";
+---
+
+<footer class="site-footer" id="footer">
+  <div class="shell site-footer__inner">
+    <div class="site-footer__brand-block">
+      <a class="site-footer__brand" href="#inicio">{hero.brand}</a>
+      <p class="site-footer__summary">
+        Nutrición clínica con conexión humana para tu salud digestiva y metabólica.
+      </p>
+    </div>
+
+    <div class="site-footer__nav-block">
+      <p class="site-footer__heading">Navegación</p>
+      <ul>
+        {
+          footerLinks.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="site-footer__cta-block">
+      <Button href="#contacto">Agendar</Button>
+    </div>
+  </div>
+</footer>

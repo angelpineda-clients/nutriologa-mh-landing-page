@@ -1,0 +1,43 @@
+---
+import { Check, MoveRight } from "lucide-react";
+
+import { closingCta } from "../../data/landing-content";
+import { Button } from "../ui/Button";
+import { Reveal } from "../ui/Reveal";
+
+import "../../styles/sections/closing-cta.css";
+---
+
+<section class="closing-cta section" id="contacto">
+  <div class="shell closing-cta__panel">
+    <Reveal client:visible className="closing-cta__content">
+      <p class="section-label closing-cta__label">Acompañamiento</p>
+      <h2 class="section-title closing-cta__title">{closingCta.title}</h2>
+      <p class="closing-cta__body">{closingCta.paragraph}</p>
+
+      <Button href={closingCta.button.href} className="closing-cta__button" icon>
+        {closingCta.button.label}
+      </Button>
+    </Reveal>
+
+    <Reveal client:visible className="closing-cta__benefits" delay={0.08} direction="left">
+      <ul>
+        {
+          closingCta.bullets.map((item) => (
+            <li>
+              <span class="closing-cta__bullet-icon">
+                <Check aria-hidden="true" size={16} strokeWidth={2} />
+              </span>
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="closing-cta__signature">
+        <span class="closing-cta__signature-line"></span>
+        <MoveRight aria-hidden="true" size={22} strokeWidth={1.7} />
+      </div>
+    </Reveal>
+  </div>
+</section>

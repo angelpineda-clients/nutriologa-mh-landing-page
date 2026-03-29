@@ -1,0 +1,27 @@
+---
+import HeaderHero from "../components/sections/HeaderHero.astro";
+import Philosophy from "../components/sections/Philosophy.astro";
+import ProcessSection from "../components/sections/ProcessSection.astro";
+import Services from "../components/sections/Services.astro";
+import Testimonials from "../components/sections/Testimonials.astro";
+import Specialties from "../components/sections/Specialties.astro";
+import ClosingCta from "../components/sections/ClosingCta.astro";
+import SocialSection from "../components/sections/SocialSection.astro";
+import SiteFooter from "../components/sections/SiteFooter.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteMeta } from "../data/landing-content";
+---
+
+<BaseLayout title={siteMeta.title} description={siteMeta.description}>
+  <main class="page">
+    <HeaderHero />
+    <Philosophy />
+    <ProcessSection />
+    <Services />
+    <Testimonials />
+    <Specialties />
+    <ClosingCta />
+    <SocialSection />
+  </main>
+  <SiteFooter />
+</BaseLayout>
