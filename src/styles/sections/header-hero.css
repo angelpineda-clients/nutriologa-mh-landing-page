@@ -247,7 +247,7 @@
 
 .hero__title {
   margin: 0;
-  color: var(--color-text-deep);
+  color: var(--color-primary);
   font-family: var(--font-display);
   font-size: clamp(3.25rem, 7vw, 6.55rem);
   font-weight: 500;

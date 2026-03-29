@@ -12,9 +12,12 @@
 }
 
 .closing-cta__label,
-.closing-cta__title,
 .closing-cta__body {
   color: inherit;
+}
+
+.closing-cta__title {
+  color: var(--color-primary);
 }
 
 .closing-cta__body {

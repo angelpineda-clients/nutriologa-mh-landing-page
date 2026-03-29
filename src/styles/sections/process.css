@@ -65,7 +65,7 @@
 
 .process-step__title {
   margin: 0 0 0.55rem;
-  color: var(--color-text-deep);
+  color: var(--color-primary);
   font-size: 1.25rem;
   font-weight: 600;
 }
