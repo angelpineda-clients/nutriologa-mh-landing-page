@@ -102,6 +102,8 @@ export const floatingWhatsAppCta = {
   href: whatsappConsultationCta.href
 };
 
+export const appointmentBookingHref = "/agendar";
+
 export const navigation: NavItem[] = [
   { label: "Filosofía", href: "#filosofia" },
   { label: "Servicios", href: "#servicios" },
@@ -117,7 +119,7 @@ export const hero = {
     "Permíteme guiarte para conocer tu cuerpo, de tal manera que logres nutrirlo física, mental y socialmente, desde la libertad y la compasión, y así cuidar tu bienestar con un abordaje 100% integral y personal.",
   primaryCta: {
     label: "Agendar",
-    href: "#contacto"
+    href: appointmentBookingHref
   },
   secondaryCta: {
     label: "Escríbeme por WhatsApp",
@@ -167,7 +169,7 @@ export const processCta = {
   intro: "Si este acompañamiento se siente alineado contigo, demos el siguiente paso.",
   button: {
     label: "Agenda tu primera consulta",
-    href: "#contacto"
+    href: appointmentBookingHref
   }
 };
 
@@ -177,7 +179,7 @@ export const services: Service[] = [
     description:
       "Sesiones personalizadas para salud digestiva, metabólica y cambio de hábitos.",
     cta: "Agendar",
-    href: "#contacto",
+    href: appointmentBookingHref,
     icon: "videocam",
     featured: true
   },
@@ -237,7 +239,7 @@ export const closingCta = {
   ],
   button: {
     label: "Iniciemos",
-    href: "#footer"
+    href: appointmentBookingHref
   }
 };
 
@@ -264,6 +266,27 @@ export const footerLinks: NavItem[] = [
   { label: "Servicios", href: "#servicios" },
   { label: "Especialidades", href: "#especialidades" }
 ];
+
+export const appointmentPage = {
+  title: "Agenda tu consulta en línea",
+  description:
+    "Elige el horario que mejor se adapte a ti para tu consulta con Monserrat Herrera en Google Calendar.",
+  label: "Calendario de citas",
+  eyebrow: "Consulta en línea",
+  intro:
+    "Aquí puedes revisar la disponibilidad y reservar tu espacio de forma sencilla. Si antes de agendar quieres contarme un poco sobre tu proceso, también puedes escribirme por WhatsApp.",
+  calendarTitle: "Calendario para agendar consulta con Monserrat Herrera",
+  calendarSrc:
+    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3znck4HPTRTMSY5s363FhouX2Zko3b9a8qAWf2ioV5LAHIJ_EaLLfRPeYKTabwN1KBWOSNCw0c?gv=true",
+  primaryCta: {
+    label: "Volver al inicio",
+    href: "/"
+  },
+  secondaryCta: {
+    label: "Escríbeme por WhatsApp",
+    href: whatsappConsultationCta.href
+  }
+};
 
 export const buildHomeStructuredData = () => {
   const canonicalUrl = toAbsoluteUrl("/");
@@ -334,5 +357,52 @@ export const buildHomeStructuredData = () => {
   return {
     "@context": "https://schema.org",
     "@graph": [website, webpage, person, offerCatalog]
+  };
+};
+
+export const buildAppointmentStructuredData = () => {
+  const canonicalUrl = toAbsoluteUrl(appointmentBookingHref);
+  const imageUrl = toAbsoluteUrl(siteMeta.image);
+  const homeUrl = toAbsoluteUrl("/");
+  const sameAs = socialItems.map((item) => item.href);
+
+  const website = compactObject({
+    "@type": "WebSite",
+    "@id": homeUrl ? `${homeUrl}#website` : undefined,
+    url: homeUrl,
+    name: siteMeta.siteName,
+    description: siteMeta.description,
+    inLanguage: "es-MX"
+  });
+
+  const person = compactObject({
+    "@type": "Person",
+    "@id": homeUrl ? `${homeUrl}#person` : undefined,
+    name: professionalProfile.name,
+    jobTitle: professionalProfile.jobTitle,
+    description: professionalProfile.description,
+    telephone: contactInfo.telephone,
+    url: homeUrl,
+    image: imageUrl,
+    sameAs,
+    areaServed: contactInfo.areaServed,
+    availableLanguage: ["es-MX"]
+  });
+
+  const webpage = compactObject({
+    "@type": "WebPage",
+    "@id": canonicalUrl ? `${canonicalUrl}#webpage` : undefined,
+    url: canonicalUrl,
+    name: appointmentPage.title,
+    description: appointmentPage.description,
+    inLanguage: "es-MX",
+    isPartOf: homeUrl ? { "@id": `${homeUrl}#website` } : undefined,
+    about: homeUrl ? { "@id": `${homeUrl}#person` } : undefined,
+    primaryImageOfPage: imageUrl ? { "@type": "ImageObject", url: imageUrl } : undefined
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [website, person, webpage]
   };
 };
