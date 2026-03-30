@@ -1,0 +1,129 @@
+.appointments {
+  padding-top: clamp(3rem, 7vw, 5.5rem);
+}
+
+.appointments__shell {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.appointments__intro,
+.appointments__calendar-card {
+  padding: clamp(1.5rem, 4vw, 2.6rem);
+  border: 1px solid rgba(176, 137, 104, 0.14);
+  border-radius: calc(var(--radius-panel) - 0.5rem);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 250, 0.94), rgba(244, 231, 216, 0.62)),
+    rgba(253, 252, 252, 0.78);
+  box-shadow:
+    0 20px 44px rgba(91, 77, 67, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.appointments__intro {
+  position: relative;
+  overflow: hidden;
+}
+
+.appointments__intro::after {
+  content: "";
+  position: absolute;
+  inset: auto -4rem -4rem auto;
+  width: clamp(12rem, 24vw, 18rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(191, 158, 130, 0.18), transparent 68%);
+  pointer-events: none;
+}
+
+.appointments__label {
+  margin-bottom: 0.9rem;
+}
+
+.appointments__eyebrow {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.appointments__title {
+  max-width: 14ch;
+  margin-top: 1rem;
+}
+
+.appointments__body {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+}
+
+.appointments__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.appointments__secondary-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.5rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  transition: color 180ms ease;
+}
+
+.appointments__secondary-action:hover {
+  color: var(--color-text-deep);
+}
+
+.appointments__calendar-card {
+  display: grid;
+  gap: 1.3rem;
+}
+
+.appointments__calendar-header {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.appointments__calendar-kicker {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.appointments__calendar-copy {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.appointments__calendar-frame {
+  overflow: hidden;
+  border-radius: calc(var(--radius-card) - 0.35rem);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 0 0 1px rgba(176, 137, 104, 0.12);
+}
+
+.appointments__calendar-frame iframe {
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .appointments {
+    padding-top: 2.25rem;
+  }
+
+  .appointments__intro,
+  .appointments__calendar-card {
+    padding: 1.35rem;
+  }
+}

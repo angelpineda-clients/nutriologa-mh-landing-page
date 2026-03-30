@@ -1,0 +1,52 @@
+---
+import { appointmentPage } from "../../data/landing-content";
+import { Button } from "../ui/Button";
+import { Reveal } from "../ui/Reveal";
+
+import "../../styles/sections/appointment-scheduler.css";
+---
+
+<section class="appointments section">
+  <div class="shell appointments__shell">
+    <Reveal client:visible className="appointments__intro">
+      <p class="section-label appointments__label">{appointmentPage.label}</p>
+      <p class="appointments__eyebrow">{appointmentPage.eyebrow}</p>
+      <h1 class="section-title appointments__title">{appointmentPage.title}</h1>
+      <p class="appointments__body">{appointmentPage.intro}</p>
+
+      <div class="appointments__actions">
+        <Button href={appointmentPage.primaryCta.href} variant="secondary">
+          {appointmentPage.primaryCta.label}
+        </Button>
+        <a
+          class="appointments__secondary-action"
+          href={appointmentPage.secondaryCta.href}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {appointmentPage.secondaryCta.label}
+        </a>
+      </div>
+    </Reveal>
+
+    <Reveal client:visible className="appointments__calendar-card" delay={0.08} direction="up">
+      <div class="appointments__calendar-header">
+        <p class="appointments__calendar-kicker">Disponibilidad actual</p>
+        <p class="appointments__calendar-copy">
+          Selecciona el horario que mejor te funcione y completa tu reserva.
+        </p>
+      </div>
+
+      <div class="appointments__calendar-frame">
+        <iframe
+          src={appointmentPage.calendarSrc}
+          title={appointmentPage.calendarTitle}
+          style="border: 0;"
+          width="100%"
+          height="600"
+          frameborder="0"
+        />
+      </div>
+    </Reveal>
+  </div>
+</section>

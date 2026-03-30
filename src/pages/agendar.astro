@@ -1,0 +1,25 @@
+---
+import AppointmentScheduler from "../components/sections/AppointmentScheduler.astro";
+import FloatingWhatsAppButton from "../components/ui/FloatingWhatsAppButton.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  appointmentPage,
+  buildAppointmentStructuredData,
+  siteMeta
+} from "../data/landing-content";
+
+const appointmentStructuredData = buildAppointmentStructuredData();
+---
+
+<BaseLayout
+  title={`${appointmentPage.title} | ${siteMeta.siteName}`}
+  description={appointmentPage.description}
+  pathname="/agendar"
+  image={siteMeta.image}
+  structuredData={appointmentStructuredData}
+>
+  <main class="page">
+    <AppointmentScheduler />
+  </main>
+  <FloatingWhatsAppButton />
+</BaseLayout>
