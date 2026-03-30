@@ -157,9 +157,9 @@ export function TestimonialCarousel({ items }: TestimonialCarouselProps) {
         <div className="testimonials-carousel__header">
           <div>
             <p className="section-label testimonials-carousel__label">Testimonios</p>
-            <p className="testimonials-carousel__eyebrow">
+            <h2 className="testimonials-carousel__eyebrow">
               Historias reales de acompañamiento nutricional
-            </p>
+            </h2>
           </div>
 
           <div className="testimonials-carousel__status" aria-hidden="true">

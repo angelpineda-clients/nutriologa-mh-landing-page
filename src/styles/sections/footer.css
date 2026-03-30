@@ -41,6 +41,23 @@
   line-height: 1.8;
 }
 
+.site-footer__contact-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__contact-link {
+  color: var(--color-text-muted);
+  transition: color 180ms ease;
+}
+
+.site-footer__contact-link:hover {
+  color: var(--color-text-deep);
+}
+
 .site-footer__heading {
   margin: 0;
   color: var(--color-primary);

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.0",
+    "@astrojs/sitemap": "^3.7.2",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@fontsource/manrope": "^5.2.6",

@@ -36,14 +36,63 @@ export type SocialItem = {
   platform: "instagram" | "tiktok";
 };
 
+const siteUrl = (import.meta.env.SITE_URL ?? "").replace(/\/$/, "");
+
+const toAbsoluteUrl = (path: string) => {
+  if (/^https?:\/\//i.test(path)) {
+    return path;
+  }
+
+  if (!siteUrl) {
+    return undefined;
+  }
+
+  return new URL(path, siteUrl).toString();
+};
+
+const compactObject = <T extends Record<string, unknown>>(value: T): T =>
+  Object.fromEntries(
+    Object.entries(value).filter(([, entry]) => {
+      if (entry === undefined || entry === null || entry === "") {
+        return false;
+      }
+
+      if (Array.isArray(entry)) {
+        return entry.length > 0;
+      }
+
+      return true;
+    })
+  ) as T;
+
 export const siteMeta = {
-  title: "Monserrat Herrera | Nutrición clínica con enfoque humano",
+  title: "Nutrióloga clínica digestiva y metabólica | Monserrat Herrera",
   description:
-    "Nutrición clínica con conexión humana para tu salud digestiva y metabólica."
+    "Consulta de nutrición clínica con enfoque humano para salud digestiva, metabólica y cambio de hábitos. Agenda en línea con Monserrat Herrera.",
+  siteName: "Monserrat Herrera | Nutrición con conexión",
+  locale: "es_MX",
+  type: "website",
+  image: "/images/og-share.png",
+  siteUrl
 };
 
 export const whatsappConsultationCta = {
   href: "https://wa.me/5213310803142?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20las%20consultas."
+};
+
+export const contactInfo = {
+  telephone: "+52 33 1080 3142",
+  telephoneHref: "tel:+523310803142",
+  whatsappHref: whatsappConsultationCta.href,
+  consultationMode: "Consulta en línea",
+  areaServed: "México"
+};
+
+export const professionalProfile = {
+  name: "Monserrat Herrera",
+  jobTitle: "Nutrióloga clínica",
+  description:
+    "Nutrióloga clínica con enfoque humano para salud digestiva, salud metabólica y cambio de hábitos."
 };
 
 export const floatingWhatsAppCta = {
@@ -215,3 +264,75 @@ export const footerLinks: NavItem[] = [
   { label: "Servicios", href: "#servicios" },
   { label: "Especialidades", href: "#especialidades" }
 ];
+
+export const buildHomeStructuredData = () => {
+  const canonicalUrl = toAbsoluteUrl("/");
+  const imageUrl = toAbsoluteUrl(siteMeta.image);
+  const knowledgeAreas = specialties
+    .map((topic) => topic.label)
+    .filter((label) => label !== "Otro*");
+  const sameAs = socialItems.map((item) => item.href);
+
+  const website = compactObject({
+    "@type": "WebSite",
+    "@id": canonicalUrl ? `${canonicalUrl}#website` : undefined,
+    url: canonicalUrl,
+    name: siteMeta.siteName,
+    description: siteMeta.description,
+    inLanguage: "es-MX"
+  });
+
+  const person = compactObject({
+    "@type": "Person",
+    "@id": canonicalUrl ? `${canonicalUrl}#person` : undefined,
+    name: professionalProfile.name,
+    jobTitle: professionalProfile.jobTitle,
+    description: professionalProfile.description,
+    telephone: contactInfo.telephone,
+    url: canonicalUrl,
+    image: imageUrl,
+    sameAs,
+    areaServed: contactInfo.areaServed,
+    availableLanguage: ["es-MX"],
+    knowsAbout: knowledgeAreas
+  });
+
+  const webpage = compactObject({
+    "@type": "WebPage",
+    "@id": canonicalUrl ? `${canonicalUrl}#webpage` : undefined,
+    url: canonicalUrl,
+    name: siteMeta.title,
+    description: siteMeta.description,
+    inLanguage: "es-MX",
+    isPartOf: canonicalUrl ? { "@id": `${canonicalUrl}#website` } : undefined,
+    about: canonicalUrl ? { "@id": `${canonicalUrl}#person` } : undefined,
+    primaryImageOfPage: imageUrl ? { "@type": "ImageObject", url: imageUrl } : undefined
+  });
+
+  const offerCatalog = compactObject({
+    "@type": "OfferCatalog",
+    "@id": canonicalUrl ? `${canonicalUrl}#services` : undefined,
+    name: "Servicios de nutrición",
+    itemListElement: services.map((service) =>
+      compactObject({
+        "@type": "Offer",
+        itemOffered: compactObject({
+          "@type": "Service",
+          name: service.title,
+          description: service.description,
+          areaServed: contactInfo.areaServed,
+          availableChannel: compactObject({
+            "@type": "ServiceChannel",
+            serviceUrl: toAbsoluteUrl(service.href),
+            availableLanguage: "es-MX"
+          })
+        })
+      })
+    )
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [website, webpage, person, offerCatalog]
+  };
+};

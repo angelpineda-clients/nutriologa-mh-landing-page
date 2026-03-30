@@ -10,10 +10,18 @@ import SocialSection from "../components/sections/SocialSection.astro";
 import SiteFooter from "../components/sections/SiteFooter.astro";
 import FloatingWhatsAppButton from "../components/ui/FloatingWhatsAppButton.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { siteMeta } from "../data/landing-content";
+import { buildHomeStructuredData, siteMeta } from "../data/landing-content";
+
+const homeStructuredData = buildHomeStructuredData();
 ---
 
-<BaseLayout title={siteMeta.title} description={siteMeta.description}>
+<BaseLayout
+  title={siteMeta.title}
+  description={siteMeta.description}
+  pathname="/"
+  image={siteMeta.image}
+  structuredData={homeStructuredData}
+>
   <main class="page">
     <HeaderHero />
     <Philosophy />
