@@ -1,28 +1,41 @@
 .appointments {
-  padding-top: clamp(3rem, 7vw, 5.5rem);
+  position: relative;
+  padding-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.appointments__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(191, 158, 130, 0.16), transparent 24%),
+    radial-gradient(circle at 84% 16%, rgba(160, 119, 84, 0.1), transparent 18%);
+  pointer-events: none;
 }
 
 .appointments__shell {
+  position: relative;
+  z-index: 1;
   display: grid;
-  gap: clamp(1.75rem, 4vw, 2.75rem);
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: start;
 }
 
 .appointments__intro,
 .appointments__calendar-card {
-  padding: clamp(1.5rem, 4vw, 2.6rem);
-  border: 1px solid rgba(176, 137, 104, 0.14);
-  border-radius: calc(var(--radius-panel) - 0.5rem);
+  border: 1px solid rgba(176, 137, 104, 0.16);
+  border-radius: calc(var(--radius-panel) - 0.45rem);
   background:
-    linear-gradient(180deg, rgba(255, 253, 250, 0.94), rgba(244, 231, 216, 0.62)),
-    rgba(253, 252, 252, 0.78);
+    linear-gradient(180deg, rgba(255, 253, 250, 0.96), rgba(245, 234, 220, 0.72)),
+    rgba(253, 252, 252, 0.88);
   box-shadow:
-    0 20px 44px rgba(91, 77, 67, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+    0 22px 54px rgba(91, 77, 67, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
 }
 
 .appointments__intro {
   position: relative;
   overflow: hidden;
+  padding: clamp(1.35rem, 4vw, 2.4rem);
 }
 
 .appointments__intro::after {
@@ -32,98 +45,237 @@
   width: clamp(12rem, 24vw, 18rem);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(191, 158, 130, 0.18), transparent 68%);
+  background: radial-gradient(circle, rgba(191, 158, 130, 0.16), transparent 68%);
   pointer-events: none;
 }
 
 .appointments__label {
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.85rem;
 }
 
 .appointments__eyebrow {
   margin: 0;
   color: var(--color-primary);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .appointments__title {
-  max-width: 14ch;
-  margin-top: 1rem;
+  max-width: 10ch;
+  margin-top: 0.9rem;
 }
 
 .appointments__body {
-  max-width: 42rem;
+  position: relative;
+  z-index: 1;
+  max-width: 32rem;
   margin: 1rem 0 0;
   color: var(--color-text-muted);
-  line-height: 1.85;
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
 .appointments__actions {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.9rem;
-  margin-top: 2rem;
+  align-items: center;
+  gap: 0.85rem 1.1rem;
+  margin-top: 1.75rem;
 }
 
-.appointments__secondary-action {
+.appointments__back-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  min-height: 3.5rem;
+  min-height: 3rem;
   color: var(--color-text-muted);
+  font-size: 0.95rem;
   font-weight: 600;
   transition: color 180ms ease;
 }
 
-.appointments__secondary-action:hover {
+.appointments__back-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.55rem;
+  height: 1px;
+  background: rgba(160, 119, 84, 0.28);
+  transition: background-color 180ms ease;
+}
+
+.appointments__back-link:hover {
   color: var(--color-text-deep);
 }
 
+.appointments__back-link:hover::after {
+  background: rgba(160, 119, 84, 0.52);
+}
+
 .appointments__calendar-card {
-  display: grid;
-  gap: 1.3rem;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+.appointments__calendar-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.36), transparent 42%),
+    radial-gradient(circle at top right, rgba(191, 158, 130, 0.14), transparent 28%);
+  pointer-events: none;
+}
+
+.appointments__calendar-topline,
+.appointments__calendar-header,
+.appointments__calendar-note,
+.appointments__calendar-frame {
+  position: relative;
+  z-index: 1;
+}
+
+.appointments__calendar-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(160, 119, 84, 0.18);
+  background: rgba(255, 251, 247, 0.84);
+  color: var(--color-text-deep);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .appointments__calendar-header {
   display: grid;
   gap: 0.45rem;
+  margin-top: 0.95rem;
 }
 
 .appointments__calendar-kicker {
   margin: 0;
   color: var(--color-primary);
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-.appointments__calendar-copy {
+.appointments__calendar-title {
+  margin: 0;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 500;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.appointments__calendar-copy,
+.appointments__calendar-note {
   margin: 0;
   color: var(--color-text-muted);
   line-height: 1.75;
 }
 
-.appointments__calendar-frame {
-  overflow: hidden;
-  border-radius: calc(var(--radius-card) - 0.35rem);
-  background: rgba(255, 255, 255, 0.85);
+.appointments__calendar-note {
+  margin-top: 0.9rem;
+  padding: 0.95rem 1rem;
+  border-radius: calc(var(--radius-card) - 1rem);
+  background: rgba(255, 248, 241, 0.78);
   box-shadow: inset 0 0 0 1px rgba(176, 137, 104, 0.12);
 }
 
+.appointments__calendar-frame {
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  border-radius: calc(var(--radius-card) - 0.1rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(245, 234, 220, 0.88)),
+    rgba(255, 255, 255, 0.92);
+  box-shadow:
+    inset 0 0 0 1px rgba(176, 137, 104, 0.14),
+    0 18px 38px rgba(91, 77, 67, 0.08);
+}
+
+.appointments__calendar-glow {
+  position: absolute;
+  inset: -10% auto auto -6%;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(191, 158, 130, 0.14), transparent 66%);
+  pointer-events: none;
+}
+
 .appointments__calendar-frame iframe {
+  position: relative;
+  z-index: 1;
   display: block;
+  width: 100%;
+  height: 1040px;
+  border: 0;
+  border-radius: calc(var(--radius-card) - 0.75rem);
+  background: #ffffff;
+}
+
+@media (min-width: 920px) {
+  .appointments__shell {
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  }
+
+  .appointments__calendar-frame iframe {
+    height: clamp(860px, 84vh, 940px);
+  }
 }
 
 @media (max-width: 720px) {
   .appointments {
-    padding-top: 2.25rem;
+    padding-top: 2rem;
   }
 
   .appointments__intro,
   .appointments__calendar-card {
-    padding: 1.35rem;
+    padding: 1.15rem;
+  }
+
+  .appointments__actions {
+    align-items: stretch;
+  }
+
+  .appointments__actions .ui-button {
+    width: 100%;
+  }
+
+  .appointments__back-link {
+    min-height: auto;
+  }
+
+  .appointments__back-link::after {
+    bottom: -0.1rem;
+  }
+
+  .appointments__calendar-title {
+    max-width: 9ch;
+  }
+
+  .appointments__calendar-frame {
+    padding: 0.5rem;
+  }
+
+  .appointments__calendar-frame iframe {
+    height: 1120px;
   }
 }

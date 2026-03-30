@@ -274,7 +274,12 @@ export const appointmentPage = {
   label: "Calendario de citas",
   eyebrow: "Consulta en línea",
   intro:
-    "Aquí puedes revisar la disponibilidad y reservar tu espacio de forma sencilla. Si antes de agendar quieres contarme un poco sobre tu proceso, también puedes escribirme por WhatsApp.",
+    "Revisa la disponibilidad y reserva tu espacio directamente en el calendario. Si necesitas apoyo antes de agendar, también puedes escribir por WhatsApp.",
+  calendarHeading: "Elige un horario",
+  calendarIntro:
+    "Despúes de confirmar tu cita, recibirás un correo con los pasos a seguir para tu consulta en línea.",
+  calendarNote:
+    "Si no aparece un horario útil para ti, escribe por WhatsApp.",
   calendarTitle: "Calendario para agendar consulta con Monserrat Herrera",
   calendarSrc:
     "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3znck4HPTRTMSY5s363FhouX2Zko3b9a8qAWf2ioV5LAHIJ_EaLLfRPeYKTabwN1KBWOSNCw0c?gv=true",
