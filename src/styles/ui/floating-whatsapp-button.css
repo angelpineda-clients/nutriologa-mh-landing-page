@@ -25,14 +25,17 @@
     opacity 220ms ease,
     transform 220ms ease,
     box-shadow 180ms ease,
-    border-color 180ms ease;
+    border-color 180ms ease,
+    visibility 220ms ease;
   isolation: isolate;
+  visibility: hidden;
 }
 
 .floating-whatsapp[data-visible="true"] {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0) scale(1);
+  visibility: visible;
 }
 
 .floating-whatsapp:hover {

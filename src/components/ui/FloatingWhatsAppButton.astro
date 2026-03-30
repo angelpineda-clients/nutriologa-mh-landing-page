@@ -32,14 +32,22 @@ import "../../styles/ui/floating-whatsapp-button.css";
 <script>
   const heroShell = document.querySelector("[data-hero-shell]");
   const floatingWhatsApp = document.querySelector("[data-whatsapp-float]");
+  const siteFooter = document.querySelector("#footer");
 
-  if (heroShell instanceof HTMLElement && floatingWhatsApp instanceof HTMLElement) {
+  if (
+    heroShell instanceof HTMLElement &&
+    floatingWhatsApp instanceof HTMLElement &&
+    siteFooter instanceof HTMLElement
+  ) {
     let frame = 0;
 
     const syncVisibility = () => {
       const headerOffset = 96;
       const heroBounds = heroShell.getBoundingClientRect();
-      const shouldShow = heroBounds.bottom <= headerOffset;
+      const footerBounds = siteFooter.getBoundingClientRect();
+      const footerThreshold = window.innerHeight - 120;
+      const hasReachedFooter = footerBounds.top <= footerThreshold;
+      const shouldShow = heroBounds.bottom <= headerOffset && !hasReachedFooter;
 
       floatingWhatsApp.dataset.visible = shouldShow ? "true" : "false";
     };
