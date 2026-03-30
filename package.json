@@ -14,6 +14,8 @@
     "@emotion/styled": "^11.14.1",
     "@fontsource/manrope": "^5.2.6",
     "@fontsource/newsreader": "^5.2.6",
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.3.0",
     "@mui/icons-material": "^7.3.9",
     "@mui/material": "^7.3.9",
     "astro": "^5.13.0",

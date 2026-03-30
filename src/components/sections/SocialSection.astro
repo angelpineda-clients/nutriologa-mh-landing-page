@@ -1,7 +1,7 @@
 ---
-import ChatBubbleRoundedIcon from "@mui/icons-material/ChatBubbleRounded";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import MusicNoteRoundedIcon from "@mui/icons-material/MusicNoteRounded";
+import { faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { socialItems } from "../../data/landing-content";
 import { Reveal } from "../ui/Reveal";
@@ -20,18 +20,27 @@ import "../../styles/sections/social.css";
     </Reveal>
 
     <Reveal client:visible className="social__icons" delay={0.06}>
-      <span class="social__icon-chip">
-        <InstagramIcon aria-hidden="true" />
-        <span class="sr-only">{socialItems[0].label}</span>
-      </span>
-      <span class="social__icon-chip">
-        <MusicNoteRoundedIcon aria-hidden="true" />
-        <span class="sr-only">{socialItems[1].label}</span>
-      </span>
-      <span class="social__icon-chip">
-        <ChatBubbleRoundedIcon aria-hidden="true" />
-        <span class="sr-only">{socialItems[2].label}</span>
-      </span>
+      <p class="social__icons-label">Sígueme</p>
+      <div class="social__icons-tray" aria-label="Redes sociales">
+        {
+          socialItems.map((item) => (
+            <a
+              class="social__icon-chip"
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={item.ariaLabel}
+              data-platform={item.platform}
+              title={item.label}
+            >
+              <span class="social__icon-mark" aria-hidden="true">
+                {item.platform === "instagram" ? <InstagramIcon /> : <FontAwesomeIcon icon={faTiktok} />}
+              </span>
+              <span class="sr-only">{item.label}</span>
+            </a>
+          ))
+        }
+      </div>
     </Reveal>
   </div>
 </section>

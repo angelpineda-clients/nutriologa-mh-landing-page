@@ -5,6 +5,10 @@
   --color-primary: #a07754;
   --color-accent: #b08968;
   --color-accent-soft: #bf9e82;
+  --color-instagram-glow: rgba(214, 90, 61, 0.18);
+  --color-instagram-glow-soft: rgba(137, 58, 180, 0.12);
+  --color-tiktok-glow: rgba(37, 244, 238, 0.12);
+  --color-tiktok-glow-soft: rgba(254, 44, 85, 0.12);
   --color-whatsapp: #1f9d55;
   --color-whatsapp-deep: #157347;
   --color-text: #2c2a28;

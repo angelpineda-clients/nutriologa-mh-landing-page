@@ -26,6 +26,10 @@ export type Specialty = {
 
 export type SocialItem = {
   label: string;
+  href: string;
+  handle: string;
+  ariaLabel: string;
+  platform: "instagram" | "tiktok";
 };
 
 export const siteMeta = {
@@ -169,9 +173,20 @@ export const closingCta = {
 };
 
 export const socialItems: SocialItem[] = [
-  { label: "Instagram" },
-  { label: "TikTok" },
-  { label: "WhatsApp" }
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/nutricionconconexion",
+    handle: "@nutricionconconexion",
+    ariaLabel: "Abrir Instagram de Nutrición con Conexión",
+    platform: "instagram"
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@nutricionconconexion",
+    handle: "@nutricionconconexion",
+    ariaLabel: "Abrir TikTok de Nutrición con Conexión",
+    platform: "tiktok"
+  }
 ];
 
 export const footerLinks: NavItem[] = [

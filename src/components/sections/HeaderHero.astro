@@ -1,9 +1,9 @@
 ---
-import ChatBubbleRoundedIcon from "@mui/icons-material/ChatBubbleRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
-import MusicNoteRoundedIcon from "@mui/icons-material/MusicNoteRounded";
+import { faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { navigation, hero, socialItems } from "../../data/landing-content";
 import { Button } from "../ui/Button";
@@ -114,26 +114,35 @@ import "../../styles/sections/header-hero.css";
         />
       </div>
 
-      <ul class="hero__socials" aria-label="Redes sociales">
-        <li>
-          <span class="hero__social-chip">
-            <InstagramIcon aria-hidden="true" fontSize="small" />
-            <span class="sr-only">{socialItems[0].label}</span>
-          </span>
-        </li>
-        <li>
-          <span class="hero__social-chip">
-            <MusicNoteRoundedIcon aria-hidden="true" fontSize="small" />
-            <span class="sr-only">{socialItems[1].label}</span>
-          </span>
-        </li>
-        <li>
-          <span class="hero__social-chip">
-            <ChatBubbleRoundedIcon aria-hidden="true" fontSize="small" />
-            <span class="sr-only">{socialItems[2].label}</span>
-          </span>
-        </li>
-      </ul>
+      <div class="hero__social-stack">
+        <p class="hero__social-kicker">Sígueme</p>
+        <ul class="hero__socials" aria-label="Redes sociales">
+          {
+            socialItems.map((item) => (
+              <li>
+                <a
+                  class="hero__social-chip"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.ariaLabel}
+                  data-platform={item.platform}
+                  title={item.label}
+                >
+                  <span class="hero__social-icon" aria-hidden="true">
+                    {item.platform === "instagram" ? (
+                      <InstagramIcon fontSize="small" />
+                    ) : (
+                      <FontAwesomeIcon icon={faTiktok} />
+                    )}
+                  </span>
+                  <span class="sr-only">{item.label}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </Reveal>
   </div>
 </section>
