@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import SpeedInsights from "@vercel/speed-insights/astro";
 import { siteMeta } from "../data/landing-content";
 
 type Props = {
@@ -68,6 +69,7 @@ const structuredDataBlocks = structuredData
         <script type="application/ld+json" set:html={JSON.stringify(entry)} />
       ))
     }
+    <SpeedInsights />
   </head>
   <body>
     <slot />
