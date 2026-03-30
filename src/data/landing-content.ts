@@ -110,6 +110,14 @@ export const processSteps: ProcessStep[] = [
   }
 ];
 
+export const processCta = {
+  intro: "Si este acompañamiento se siente alineado contigo, demos el siguiente paso.",
+  button: {
+    label: "Agenda tu primera consulta",
+    href: "#contacto"
+  }
+};
+
 export const services: Service[] = [
   {
     title: "Consulta en línea",

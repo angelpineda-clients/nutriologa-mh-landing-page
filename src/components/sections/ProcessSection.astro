@@ -1,5 +1,5 @@
 ---
-import { processSteps } from "../../data/landing-content";
+import { processCta, processSteps } from "../../data/landing-content";
 import { Button } from "../ui/Button";
 import { Reveal } from "../ui/Reveal";
 
@@ -24,8 +24,6 @@ import "../../styles/sections/process.css";
             height="623"
           />
         </div>
-
-        <Button href="#contacto" className="process__cta">Agendar</Button>
       </Reveal>
 
       <Reveal client:visible className="process__steps" delay={0.1} direction="left">
@@ -42,6 +40,13 @@ import "../../styles/sections/process.css";
             ))
           }
         </ol>
+
+        <div class="process__cta-wrap">
+          <p class="process__cta-intro">{processCta.intro}</p>
+          <Button href={processCta.button.href} className="process__cta">
+            {processCta.button.label}
+          </Button>
+        </div>
       </Reveal>
     </div>
   </div>
