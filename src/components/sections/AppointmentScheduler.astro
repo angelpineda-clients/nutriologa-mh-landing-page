@@ -7,6 +7,7 @@ import "../../styles/sections/appointment-scheduler.css";
 ---
 
 <section class="appointments section">
+  <div class="appointments__veil" aria-hidden="true"></div>
   <div class="shell appointments__shell">
     <Reveal client:visible className="appointments__intro">
       <p class="section-label appointments__label">{appointmentPage.label}</p>
@@ -15,36 +16,35 @@ import "../../styles/sections/appointment-scheduler.css";
       <p class="appointments__body">{appointmentPage.intro}</p>
 
       <div class="appointments__actions">
-        <Button href={appointmentPage.primaryCta.href} variant="secondary">
+        <a class="appointments__back-link" href={appointmentPage.primaryCta.href}>
           {appointmentPage.primaryCta.label}
-        </Button>
-        <a
-          class="appointments__secondary-action"
-          href={appointmentPage.secondaryCta.href}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          {appointmentPage.secondaryCta.label}
         </a>
+        <Button href={appointmentPage.secondaryCta.href} variant="secondary" icon>
+          {appointmentPage.secondaryCta.label}
+        </Button>
       </div>
     </Reveal>
 
     <Reveal client:visible className="appointments__calendar-card" delay={0.08} direction="up">
-      <div class="appointments__calendar-header">
-        <p class="appointments__calendar-kicker">Disponibilidad actual</p>
-        <p class="appointments__calendar-copy">
-          Selecciona el horario que mejor te funcione y completa tu reserva.
-        </p>
+      <div class="appointments__calendar-topline">
+        <span class="appointments__calendar-pill">Reserva segura en Google Calendar</span>
       </div>
 
+      <div class="appointments__calendar-header">
+        <p class="appointments__calendar-kicker">Disponibilidad actual</p>
+        <h2 class="appointments__calendar-title">{appointmentPage.calendarHeading}</h2>
+        <p class="appointments__calendar-copy">{appointmentPage.calendarIntro}</p>
+      </div>
+
+      <p class="appointments__calendar-note">{appointmentPage.calendarNote}</p>
+
       <div class="appointments__calendar-frame">
+        <div class="appointments__calendar-glow" aria-hidden="true"></div>
         <iframe
           src={appointmentPage.calendarSrc}
           title={appointmentPage.calendarTitle}
-          style="border: 0;"
           width="100%"
-          height="600"
-          frameborder="0"
+          height="880"
         />
       </div>
     </Reveal>
