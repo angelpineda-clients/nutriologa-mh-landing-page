@@ -482,7 +482,7 @@
   }
 
   .site-header__nav,
-  .site-header__cta {
+  .site-header__actions .site-header__cta {
     display: none;
   }
 
