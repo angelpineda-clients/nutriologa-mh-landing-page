@@ -277,7 +277,7 @@ export const appointmentPage = {
     "Revisa la disponibilidad y reserva tu espacio directamente en el calendario. Si necesitas apoyo antes de agendar, también puedes escribir por WhatsApp.",
   calendarHeading: "Elige un horario",
   calendarIntro:
-    "Despúes de confirmar tu cita, recibirás un correo con los pasos a seguir para tu consulta en línea.",
+    "Después de confirmar tu cita, recibirás un correo con los pasos a seguir para tu consulta en línea.",
   calendarNote:
     "Si no aparece un horario útil para ti, escribe por WhatsApp.",
   calendarTitle: "Calendario para agendar consulta con Monserrat Herrera",
