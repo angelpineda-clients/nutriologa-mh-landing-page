@@ -34,6 +34,17 @@ export const siteMeta = {
     "Nutrición clínica con conexión humana para tu salud digestiva y metabólica."
 };
 
+export const whatsappConsultationCta = {
+  href: "https://wa.me/5213310803142?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20las%20consultas."
+};
+
+export const floatingWhatsAppCta = {
+  label: "WhatsApp",
+  helper: "Agenda o resuelve tus dudas",
+  ariaLabel: "Abrir WhatsApp para pedir información sobre las consultas",
+  href: whatsappConsultationCta.href
+};
+
 export const navigation: NavItem[] = [
   { label: "Filosofía", href: "#filosofia" },
   { label: "Servicios", href: "#servicios" },
@@ -53,7 +64,7 @@ export const hero = {
   },
   secondaryCta: {
     label: "Escríbeme por WhatsApp",
-    href: "https://wa.me/5213310803142?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20las%20consultas."
+    href: whatsappConsultationCta.href
   }
 };
 

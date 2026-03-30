@@ -20,9 +20,15 @@ export function Button({
   const classes = ["ui-button", `ui-button--${variant}`, className]
     .filter(Boolean)
     .join(" ");
+  const isWhatsAppLink = /(?:wa\.me|api\.whatsapp\.com|whatsapp\.com)/i.test(href);
+  const target = props.target ?? (isWhatsAppLink ? "_blank" : undefined);
+  const rel =
+    target === "_blank"
+      ? [props.rel, "noopener", "noreferrer"].filter(Boolean).join(" ")
+      : props.rel;
 
   return (
-    <a className={classes} href={href} {...props}>
+    <a className={classes} href={href} rel={rel} target={target} {...props}>
       <span>{children}</span>
       {icon ? <EastRoundedIcon aria-hidden="true" sx={{ fontSize: 18 }} /> : null}
     </a>
