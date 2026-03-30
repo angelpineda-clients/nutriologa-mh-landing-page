@@ -9,7 +9,7 @@ import "../../styles/sections/specialties.css";
   <div class="shell">
     <Reveal client:visible className="specialties__intro">
       <p class="section-label">Temas de especialidad</p>
-      <h2 class="section-title">Podemos trabajar en temas como estos.</h2>
+      <h2 class="section-title">Podemos trabajar temas como estos</h2>
       <p class="specialties__lead">
         Si recibiste un diagnóstico, tienes síntomas digestivos o quieres una
         evaluación nutricia integral, estos son algunos de los temas que podemos
@@ -17,14 +17,18 @@ import "../../styles/sections/specialties.css";
       </p>
     </Reveal>
 
-    <Reveal client:visible className="specialties__grid" delay={0.06}>
-      {
-        specialties.map((topic) => (
-          <span class="specialties__pill">{topic.label}</span>
-        ))
-      }
+    <Reveal client:visible className="specialties__panel" delay={0.06}>
+      <ul class="specialties__grid" role="list">
+        {
+          specialties.map((topic) => (
+            <li class="specialties__pill">{topic.label}</li>
+          ))
+        }
+      </ul>
+      <p class="specialties__footnote">
+        <span class="specialties__footnote-mark">*</span>
+        Revisemos tu caso en específico
+      </p>
     </Reveal>
-
-    <p class="specialties__footnote">*Revisemos tu caso en especifico</p>
   </div>
 </section>

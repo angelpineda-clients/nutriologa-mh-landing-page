@@ -1,5 +1,6 @@
 ---
-import { Check, MoveRight } from "lucide-react";
+import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
+import EastRoundedIcon from "@mui/icons-material/EastRounded";
 
 import { closingCta } from "../../data/landing-content";
 import { Button } from "../ui/Button";
@@ -26,18 +27,14 @@ import "../../styles/sections/closing-cta.css";
           closingCta.bullets.map((item) => (
             <li>
               <span class="closing-cta__bullet-icon">
-                <Check aria-hidden="true" size={16} strokeWidth={2} />
+                <CheckRoundedIcon aria-hidden="true" sx={{ fontSize: 16 }} />
               </span>
               <span>{item}</span>
             </li>
           ))
         }
       </ul>
-
-      <div class="closing-cta__signature">
-        <span class="closing-cta__signature-line"></span>
-        <MoveRight aria-hidden="true" size={22} strokeWidth={1.7} />
-      </div>
+      
     </Reveal>
   </div>
 </section>

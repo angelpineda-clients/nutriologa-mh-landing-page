@@ -1,5 +1,11 @@
 ---
-import { footerLinks, hero } from "../../data/landing-content";
+import {
+  contactInfo,
+  footerLinks,
+  hero,
+  socialItems,
+  whatsappConsultationCta
+} from "../../data/landing-content";
 import { Button } from "../ui/Button";
 
 import "../../styles/sections/footer.css";
@@ -8,10 +14,39 @@ import "../../styles/sections/footer.css";
 <footer class="site-footer" id="footer">
   <div class="shell site-footer__inner">
     <div class="site-footer__brand-block">
+      <p class="site-footer__heading">Monserrat Herrera</p>
       <a class="site-footer__brand" href="#inicio">{hero.brand}</a>
       <p class="site-footer__summary">
-        Nutrición clínica con conexión humana para tu salud digestiva y metabólica.
+        Nutrióloga clínica con consulta en línea y enfoque humano para salud
+        digestiva, metabólica y cambio de hábitos.
       </p>
+      <ul class="site-footer__contact-list">
+        <li>
+          <a class="site-footer__contact-link" href={contactInfo.telephoneHref}>
+            {contactInfo.telephone}
+          </a>
+        </li>
+        <li>
+          <a
+            class="site-footer__contact-link"
+            href={whatsappConsultationCta.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp para agendar consulta
+          </a>
+        </li>
+        <li>
+          <a
+            class="site-footer__contact-link"
+            href={socialItems[0]?.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {socialItems[0]?.handle} en Instagram
+          </a>
+        </li>
+      </ul>
     </div>
 
     <div class="site-footer__nav-block">
@@ -28,7 +63,12 @@ import "../../styles/sections/footer.css";
     </div>
 
     <div class="site-footer__cta-block">
-      <Button href="#contacto">Agendar</Button>
+      <p class="site-footer__heading">Consulta en línea</p>
+      <p class="site-footer__cta-copy">
+        Si quieres dar el siguiente paso, conversemos por WhatsApp y revisemos tu
+        caso con calma.
+      </p>
+      <Button href={whatsappConsultationCta.href}>Agendar</Button>
     </div>
   </div>
 </footer>

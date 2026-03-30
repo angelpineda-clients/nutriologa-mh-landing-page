@@ -1,5 +1,9 @@
 ---
-import { Instagram, MessageCircleMore, Music2 } from "lucide-react";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import { faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { navigation, hero, socialItems } from "../../data/landing-content";
 import { Button } from "../ui/Button";
@@ -8,32 +12,80 @@ import { Reveal } from "../ui/Reveal";
 import "../../styles/sections/header-hero.css";
 ---
 
-<section class="hero-shell" id="inicio">
+<section class="hero-shell" id="inicio" data-hero-shell>
   <div class="hero-shell__texture"></div>
-  <header class="site-header shell">
-    <a class="site-header__brand" href="#inicio">{hero.brand}</a>
+  <header class="site-header shell" data-site-header>
+    <div class="site-header__bar">
+      <a class="site-header__brand" href="#inicio">
+        <img
+          class="site-header__brand-mark"
+          src="/favicon.svg"
+          alt=""
+          width="28"
+          height="28"
+          aria-hidden="true"
+        />
+        <span>{hero.brand}</span>
+      </a>
 
-    <nav class="site-header__nav" aria-label="Principal">
-      <ul>
-        {
-          navigation.map((item, index) => (
-            <li>
-              <a
-                class:list={[
-                  "site-header__nav-link",
-                  index === 0 && "site-header__nav-link--active"
-                ]}
-                href={item.href}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+      <nav class="site-header__nav" aria-label="Principal">
+        <ul>
+          {
+            navigation.map((item) => (
+              <li>
+                <a class="site-header__nav-link" href={item.href}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
 
-    <Button href={hero.primaryCta.href} className="site-header__cta">Agendar</Button>
+      <div class="site-header__actions">
+        <Button href={hero.primaryCta.href} className="site-header__cta">Agendar</Button>
+
+        <button
+          class="site-header__menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-mobile-menu"
+          aria-label="Abrir menú de navegación"
+          data-menu-toggle
+        >
+          <MenuRoundedIcon
+            className="site-header__menu-icon site-header__menu-icon--open"
+            aria-hidden="true"
+            fontSize="small"
+          />
+          <CloseRoundedIcon
+            className="site-header__menu-icon site-header__menu-icon--close"
+            aria-hidden="true"
+            fontSize="small"
+          />
+        </button>
+      </div>
+    </div>
+
+    <div class="site-header__mobile-menu" id="site-mobile-menu" hidden data-mobile-menu>
+      <nav aria-label="Principal móvil">
+        <ul class="site-header__mobile-list">
+          {
+            navigation.map((item) => (
+              <li>
+                <a class="site-header__mobile-link" href={item.href}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <Button href={hero.primaryCta.href} className="site-header__mobile-cta">
+        {hero.primaryCta.label}
+      </Button>
+    </div>
   </header>
 
   <div class="hero shell">
@@ -44,7 +96,7 @@ import "../../styles/sections/header-hero.css";
 
       <div class="hero__actions">
         <Button href={hero.primaryCta.href}>Agendar</Button>
-        <a class="hero__secondary-action" href={hero.secondaryCta.href}>
+        <a class="hero__secondary-action" href={hero.secondaryCta.href} rel="noopener" target="_blank">
           {hero.secondaryCta.label}
         </a>
       </div>
@@ -55,33 +107,120 @@ import "../../styles/sections/header-hero.css";
         <img
           class="hero__portrait"
           src="/images/hero-portrait.avif"
-          alt=""
+          alt="Retrato de Monserrat Herrera, nutrióloga clínica"
           loading="eager"
-          width="720"
-          height="920"
+          width="490"
+          height="1081"
         />
       </div>
 
-      <ul class="hero__socials" aria-label="Redes sociales">
-        <li>
-          <span class="hero__social-chip">
-            <Instagram aria-hidden="true" size={18} strokeWidth={1.8} />
-            <span class="sr-only">{socialItems[0].label}</span>
-          </span>
-        </li>
-        <li>
-          <span class="hero__social-chip">
-            <Music2 aria-hidden="true" size={18} strokeWidth={1.8} />
-            <span class="sr-only">{socialItems[1].label}</span>
-          </span>
-        </li>
-        <li>
-          <span class="hero__social-chip">
-            <MessageCircleMore aria-hidden="true" size={18} strokeWidth={1.8} />
-            <span class="sr-only">{socialItems[2].label}</span>
-          </span>
-        </li>
-      </ul>
+      <div class="hero__social-stack">
+        <p class="hero__social-kicker">Sígueme</p>
+        <ul class="hero__socials" aria-label="Redes sociales">
+          {
+            socialItems.map((item) => (
+              <li>
+                <a
+                  class="hero__social-chip"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.ariaLabel}
+                  data-platform={item.platform}
+                  title={item.label}
+                >
+                  <span class="hero__social-icon" aria-hidden="true">
+                    {item.platform === "instagram" ? (
+                      <InstagramIcon fontSize="small" />
+                    ) : (
+                      <FontAwesomeIcon icon={faTiktok} />
+                    )}
+                  </span>
+                  <span class="sr-only">{item.label}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </Reveal>
   </div>
 </section>
+
+<script>
+  const header = document.querySelector("[data-site-header]");
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const mobileMenu = document.querySelector("[data-mobile-menu]");
+  const mobileLinks = mobileMenu?.querySelectorAll("a");
+
+  if (header instanceof HTMLElement) {
+    const syncScrollState = () => {
+      header.classList.toggle("site-header--scrolled", window.scrollY > 18);
+    };
+
+    syncScrollState();
+    window.addEventListener("scroll", syncScrollState, { passive: true });
+  }
+
+  if (
+    header instanceof HTMLElement &&
+    menuToggle instanceof HTMLButtonElement &&
+    mobileMenu instanceof HTMLElement
+  ) {
+    let hideMenuTimeout = 0;
+    const menuTransitionMs = 220;
+
+    const clearHideTimeout = () => {
+      window.clearTimeout(hideMenuTimeout);
+    };
+
+    const closeMenu = ({ immediate = false } = {}) => {
+      clearHideTimeout();
+      header.dataset.menuOpen = "false";
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Abrir menú de navegación");
+
+      if (immediate) {
+        mobileMenu.hidden = true;
+        return;
+      }
+
+      hideMenuTimeout = window.setTimeout(() => {
+        mobileMenu.hidden = true;
+      }, menuTransitionMs);
+    };
+
+    const openMenu = () => {
+      clearHideTimeout();
+      mobileMenu.hidden = false;
+
+      window.requestAnimationFrame(() => {
+        header.dataset.menuOpen = "true";
+      });
+      menuToggle.setAttribute("aria-expanded", "true");
+      menuToggle.setAttribute("aria-label", "Cerrar menú de navegación");
+    };
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = header.dataset.menuOpen === "true";
+      if (isOpen) {
+        closeMenu();
+        return;
+      }
+
+      openMenu();
+    });
+
+    mobileLinks?.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 640) {
+        closeMenu({ immediate: true });
+      }
+    });
+
+    closeMenu({ immediate: true });
+  }
+</script>

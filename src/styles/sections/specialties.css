@@ -1,37 +1,107 @@
 .specialties__intro {
-  max-width: 50rem;
+  max-width: 48rem;
 }
 
 .specialties__lead {
-  max-width: 40rem;
+  max-width: 42rem;
   margin: 1.15rem 0 0;
   color: var(--color-text-muted);
   line-height: 1.8;
 }
 
+.specialties__panel {
+  margin-top: 2.25rem;
+  padding: 1rem;
+  border-radius: calc(var(--radius-panel) - 0.35rem);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 250, 0.9), rgba(244, 231, 216, 0.62)),
+    rgba(255, 255, 255, 0.54);
+  border: 1px solid rgba(176, 137, 104, 0.14);
+  box-shadow:
+    0 24px 48px rgba(91, 77, 67, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
 .specialties__grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.9rem;
-  margin-top: 2rem;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .specialties__pill {
   display: inline-flex;
   align-items: center;
-  min-height: 3.4rem;
-  padding: 0.75rem 1.3rem;
-  border-radius: var(--radius-pill);
-  background: rgba(253, 252, 252, 0.82);
-  border: 1px solid rgba(176, 137, 104, 0.18);
+  gap: 0.65rem;
+  min-height: 3.2rem;
+  max-width: 100%;
+  padding: 0.8rem 1.15rem;
+  border-radius: 1.15rem;
+  background: rgba(253, 252, 252, 0.88);
+  border: 1px solid rgba(176, 137, 104, 0.16);
   color: var(--color-text-deep);
   font-size: 0.96rem;
-  font-weight: 500;
-  box-shadow: 0 14px 28px rgba(91, 77, 67, 0.05);
+  font-weight: 600;
+  line-height: 1.35;
+  text-wrap: balance;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    0 8px 18px rgba(91, 77, 67, 0.05);
+}
+
+.specialties__pill::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.92), rgba(191, 158, 130, 0.9));
+  box-shadow: 0 0 0 0.24rem rgba(191, 158, 130, 0.12);
+}
+
+.specialties__pill:last-child {
+  background: rgba(244, 231, 216, 0.88);
+  border-color: rgba(160, 119, 84, 0.22);
 }
 
 .specialties__footnote {
-  margin: 1rem 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.95rem 0 0;
+  padding-top: 0.95rem;
+  border-top: 1px solid rgba(176, 137, 104, 0.12);
   color: var(--color-text-muted);
   font-size: 0.95rem;
+}
+
+.specialties__footnote-mark {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .specialties__panel {
+    padding: 0.9rem;
+    border-radius: calc(var(--radius-card) + 0.15rem);
+  }
+
+  .specialties__grid {
+    gap: 0.75rem;
+  }
+
+  .specialties__pill {
+    min-height: 3rem;
+    padding: 0.72rem 1rem;
+    font-size: 0.92rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .specialties__panel {
+    padding: 1.2rem;
+  }
 }
