@@ -20,6 +20,8 @@ export type Service = {
 
 export type Testimonial = {
   quote: string;
+  author: string;
+  age?: number;
 };
 
 export type Specialty = {
@@ -151,11 +153,15 @@ export const services: Service[] = [
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "“Ahora voy con la mentalidad de hacer las cosas porque me amo, y no porque me odie y quiera cambiar algo malo. Agradezco mucho que estés en este proceso, te valoro mucho” - Ximena, 25"
+      "Ahora voy con la mentalidad de hacer las cosas porque me amo, y no porque me odie y quiera cambiar algo malo. Agradezco mucho que estés en este proceso, te valoro mucho.",
+    author: "Ximena",
+    age: 25
   },
   {
     quote:
-      "“A partir de las recomendaciones de Monse para apoyar mi tratamiento de síndrome de intestino irritable, me di cuenta de que mi alimentación podía ser mucho más variada, disfrutar mi comida y así sentirme bien” - Cointa, 79"
+      "A partir de las recomendaciones de Monse para apoyar mi tratamiento de síndrome de intestino irritable, me di cuenta de que mi alimentación podía ser mucho más variada, disfrutar mi comida y así sentirme bien.",
+    author: "Cointa",
+    age: 79
   }
 ];
 
