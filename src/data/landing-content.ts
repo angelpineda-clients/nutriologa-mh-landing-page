@@ -14,6 +14,8 @@ export type Service = {
   description: string;
   cta: string;
   href: string;
+  icon: "videocam" | "groups" | "school";
+  featured?: boolean;
 };
 
 export type Testimonial = {
@@ -124,21 +126,25 @@ export const services: Service[] = [
     description:
       "Sesiones personalizadas para salud digestiva, metabólica y cambio de hábitos.",
     cta: "Agendar",
-    href: "#contacto"
+    href: "#contacto",
+    icon: "videocam",
+    featured: true
   },
   {
     title: "Charlas y talleres",
     description:
       "Espacios educativos para equipos, comunidades o grupos que buscan bienestar con información útil y cercana.",
     cta: "Quiero saber más",
-    href: "https://wa.me/5213310803142?text=Hola%2C%20me%20podr%C3%ADa%20dar%20informaci%C3%B3n%20acerca%20de%20las%20charlas%20y%20talleres."
+    href: "https://wa.me/5213310803142?text=Hola%2C%20me%20podr%C3%ADa%20dar%20informaci%C3%B3n%20acerca%20de%20las%20charlas%20y%20talleres.",
+    icon: "groups"
   },
   {
     title: "Asesoría estudiantil",
     description:
       "Acompañamiento para estudiantes y profesionales en formación que quieren integrar una mirada más humana a la nutrición.",
     cta: "Quiero saber más",
-    href: "https://wa.me/5213310803142?text=Hola%2C%20me%20podr%C3%ADa%20dar%20informaci%C3%B3n%20sobre%20la%20asesor%C3%ADa%20estudiantil%2C%20por%20favor."
+    href: "https://wa.me/5213310803142?text=Hola%2C%20me%20podr%C3%ADa%20dar%20informaci%C3%B3n%20sobre%20la%20asesor%C3%ADa%20estudiantil%2C%20por%20favor.",
+    icon: "school"
   }
 ];
 
