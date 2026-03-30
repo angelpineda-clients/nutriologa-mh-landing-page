@@ -2,11 +2,15 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
   gap: clamp(2rem, 4vw, 4.5rem);
-  align-items: start;
+  align-items: center;
 }
 
 .philosophy__title {
   max-width: 12ch;
+}
+
+.philosophy__copy {
+  align-self: center;
 }
 
 .philosophy__paragraphs {
@@ -25,10 +29,14 @@
 
 .philosophy__visual {
   position: relative;
+  display: grid;
+  gap: 1.25rem;
+  align-content: center;
 }
 
 .philosophy__image-wrap {
   overflow: hidden;
+  aspect-ratio: 3 / 2;
   border-radius: var(--radius-panel);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(244, 231, 216, 0.8));
   border: 1px solid rgba(176, 137, 104, 0.18);
@@ -36,14 +44,15 @@
 }
 
 .philosophy__image {
+  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .philosophy__aside {
-  max-width: 18rem;
+  width: 100%;
   margin-top: 1.25rem;
-  margin-left: auto;
   padding: 1.25rem 1.35rem;
   border-radius: 1.5rem;
   background: rgba(253, 252, 252, 0.78);
