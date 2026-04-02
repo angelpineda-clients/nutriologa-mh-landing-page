@@ -72,7 +72,7 @@ export const siteMeta = {
   siteName: "Monserrat Herrera | Nutrición con conexión",
   locale: "es_MX",
   type: "website",
-  image: "/images/og-share.png",
+  image: "/images/og-share.webp",
   siteUrl
 };
 
