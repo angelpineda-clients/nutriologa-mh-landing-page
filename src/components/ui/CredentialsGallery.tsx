@@ -179,7 +179,9 @@ export function CredentialsGallery({ items, labels }: CredentialsGalleryProps) {
       />
 
       <motion.div
-        className="credentials-gallery__panel"
+        className={`credentials-gallery__panel${
+          activeItem.kind === "pdf" ? " credentials-gallery__panel--pdf" : ""
+        }`}
         role="dialog"
         aria-modal="true"
         aria-label={labels.dialogLabel}
@@ -219,9 +221,21 @@ export function CredentialsGallery({ items, labels }: CredentialsGalleryProps) {
           </button>
         </div>
 
-        <div className="credentials-gallery__panel-body">
-          <figure className="credentials-gallery__figure">
-            <div className="credentials-gallery__figure-frame">
+        <div
+          className={`credentials-gallery__panel-body${
+            activeItem.kind === "pdf" ? " credentials-gallery__panel-body--pdf" : ""
+          }`}
+        >
+          <figure
+            className={`credentials-gallery__figure${
+              activeItem.kind === "pdf" ? " credentials-gallery__figure--pdf" : ""
+            }`}
+          >
+            <div
+              className={`credentials-gallery__figure-frame${
+                activeItem.kind === "pdf" ? " credentials-gallery__figure-frame--pdf" : ""
+              }`}
+            >
               {activeItem.kind === "pdf" ? (
                 <iframe
                   className="credentials-gallery__figure-pdf"
@@ -240,12 +254,20 @@ export function CredentialsGallery({ items, labels }: CredentialsGalleryProps) {
             </div>
           </figure>
 
-          <div className="credentials-gallery__details">
+          <div
+            className={`credentials-gallery__details${
+              activeItem.kind === "pdf" ? " credentials-gallery__details--pdf" : ""
+            }`}
+          >
             <h3 className="credentials-gallery__title" id={titleId}>
               {activeItem.title}
             </h3>
 
-            <div className="credentials-gallery__controls">
+            <div
+              className={`credentials-gallery__controls${
+                activeItem.kind === "pdf" ? " credentials-gallery__controls--pdf" : ""
+              }`}
+            >
               <button
                 type="button"
                 className="credentials-gallery__nav"
