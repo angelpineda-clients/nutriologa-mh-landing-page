@@ -213,7 +213,13 @@ export const testimonials: Testimonial[] = [
       "A partir de las recomendaciones de Monse para apoyar mi tratamiento de síndrome de intestino irritable, me di cuenta de que mi alimentación podía ser mucho más variada, disfrutar mi comida y así sentirme bien.",
     author: "Cointa",
     age: 79
-  }
+  },
+  {
+    quote:
+      "Agradezco mucho las sesiones que tuve con Monse, fue una gran guía en mi cambio y mejora de hábitos.",
+    author: "Elizabeth",
+    age: 26
+  },
 ];
 
 export const specialties: Specialty[] = [
