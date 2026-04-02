@@ -10,8 +10,6 @@ import "../../styles/sections/appointment-scheduler.css";
   <div class="appointments__veil" aria-hidden="true"></div>
   <div class="shell appointments__shell">
     <Reveal client:visible className="appointments__intro">
-      <p class="section-label appointments__label">{appointmentPage.label}</p>
-      <p class="appointments__eyebrow">{appointmentPage.eyebrow}</p>
       <h1 class="section-title appointments__title">{appointmentPage.title}</h1>
       <p class="appointments__body">{appointmentPage.intro}</p>
 
@@ -26,12 +24,8 @@ import "../../styles/sections/appointment-scheduler.css";
     </Reveal>
 
     <Reveal client:visible className="appointments__calendar-card" delay={0.08} direction="up">
-      <div class="appointments__calendar-topline">
-        <span class="appointments__calendar-pill">Reserva segura en Google Calendar</span>
-      </div>
-
       <div class="appointments__calendar-header">
-        <p class="appointments__calendar-kicker">Disponibilidad actual</p>
+
         <h2 class="appointments__calendar-title">{appointmentPage.calendarHeading}</h2>
         <p class="appointments__calendar-copy">{appointmentPage.calendarIntro}</p>
       </div>
