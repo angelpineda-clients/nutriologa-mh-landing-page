@@ -282,7 +282,7 @@ export const appointmentPage = {
     "Si no aparece un horario útil para ti, escribe por WhatsApp.",
   calendarTitle: "Calendario para agendar consulta con Monserrat Herrera",
   calendarSrc:
-    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3znck4HPTRTMSY5s363FhouX2Zko3b9a8qAWf2ioV5LAHIJ_EaLLfRPeYKTabwN1KBWOSNCw0c?gv=true",
+    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1124fnuHxCBZnslCj-WCOI4fle_fB9TYGZ83HmDdHXrdOTWFSEUSPKr6JZBRephu0TWjQX2egG?gv=true",
   primaryCta: {
     label: "Volver al inicio",
     href: "/"
