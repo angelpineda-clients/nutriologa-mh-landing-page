@@ -239,8 +239,8 @@ export function CredentialsGallery({ items, labels }: CredentialsGalleryProps) {
               {activeItem.kind === "pdf" ? (
                 <iframe
                   className="credentials-gallery__figure-pdf"
-                  src={`${activeItem.image}#view=FitH&toolbar=0&navpanes=0`}
-                  title={activeItem.alt}
+                  src={`${activeItem.document ?? activeItem.image}#view=FitH&toolbar=0&navpanes=0`}
+                  title={activeItem.document ? `Archivo PDF de ${activeItem.title}` : activeItem.alt}
                 />
               ) : (
                 <img
@@ -311,14 +311,32 @@ export function CredentialsGallery({ items, labels }: CredentialsGalleryProps) {
             >
               <span className="credential-card__art">
                 {item.kind === "pdf" ? (
-                  <span className="credential-card__paper credential-card__paper--pdf" aria-hidden="true">
-                    <span className="credential-card__pdf-title">{item.title}</span>
-                    <span className="credential-card__pdf-lines">
-                      <span className="credential-card__pdf-line" />
-                      <span className="credential-card__pdf-line" />
-                      <span className="credential-card__pdf-line credential-card__pdf-line--short" />
+                  item.document && item.image !== item.document ? (
+                    <span
+                      className="credential-card__paper credential-card__paper--pdf-preview"
+                      aria-hidden="true"
+                    >
+                      <img
+                        className="credential-card__image credential-card__image--pdf-preview"
+                        src={item.image}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        width="612"
+                        height="792"
+                      />
+                      <span className="credential-card__pdf-badge">PDF</span>
                     </span>
-                  </span>
+                  ) : (
+                    <span className="credential-card__paper credential-card__paper--pdf" aria-hidden="true">
+                      <span className="credential-card__pdf-title">{item.title}</span>
+                      <span className="credential-card__pdf-lines">
+                        <span className="credential-card__pdf-line" />
+                        <span className="credential-card__pdf-line" />
+                        <span className="credential-card__pdf-line credential-card__pdf-line--short" />
+                      </span>
+                    </span>
+                  )
                 ) : (
                   <span className="credential-card__paper">
                     <img

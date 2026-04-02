@@ -54,6 +54,7 @@ export type CredentialDocument = {
   kind: "image" | "pdf";
   extension: string;
   note?: string;
+  document?: string;
 };
 
 const siteUrl = (import.meta.env.SITE_URL ?? "").replace(/\/$/, "");
