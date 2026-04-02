@@ -1,0 +1,22 @@
+---
+import CredentialsArchive from "../components/sections/CredentialsArchive.astro";
+import FloatingWhatsAppButton from "../components/ui/FloatingWhatsAppButton.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { credentialsPage } from "../data/landing-content";
+import { getCredentialsMedia } from "../lib/credentials";
+
+const { portraitImage } = getCredentialsMedia();
+---
+
+<BaseLayout
+  title={credentialsPage.title}
+  description={credentialsPage.description}
+  pathname="/credenciales"
+  image={portraitImage}
+  noindex={true}
+>
+  <main class="page">
+    <CredentialsArchive />
+  </main>
+  <FloatingWhatsAppButton />
+</BaseLayout>

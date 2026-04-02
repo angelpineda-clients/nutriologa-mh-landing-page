@@ -36,6 +36,27 @@ export type SocialItem = {
   platform: "instagram" | "tiktok";
 };
 
+export type CredentialsGalleryLabels = {
+  gridLabel: string;
+  openItemPrefix: string;
+  dialogLabel: string;
+  counterLabel: string;
+  closeLabel: string;
+  previousLabel: string;
+  nextLabel: string;
+  previewHint: string;
+};
+
+export type CredentialDocument = {
+  title: string;
+  image: string;
+  alt: string;
+  kind: "image" | "pdf";
+  extension: string;
+  note?: string;
+  document?: string;
+};
+
 const siteUrl = (import.meta.env.SITE_URL ?? "").replace(/\/$/, "");
 
 const toAbsoluteUrl = (path: string) => {
@@ -66,13 +87,13 @@ const compactObject = <T extends Record<string, unknown>>(value: T): T =>
   ) as T;
 
 export const siteMeta = {
-  title: "Nutrióloga clínica digestiva y metabólica | Monserrat Herrera",
+  title: "Nutrición con conexión | Monserrat Herrera",
   description:
     "Consulta de nutrición clínica con enfoque humano para salud digestiva, metabólica y cambio de hábitos. Agenda en línea con Monserrat Herrera.",
   siteName: "Monserrat Herrera | Nutrición con conexión",
   locale: "es_MX",
   type: "website",
-  image: "/images/og-share.png",
+  image: "/images/og-share.webp",
   siteUrl
 };
 
@@ -114,7 +135,7 @@ export const hero = {
   brand: "Monserrat Herrera",
   eyebrow: "Nutrición con conexión",
   headline:
-    "Nutrición clínica con enfoque humano para cuidar tu salud digestiva y metabólica",
+    "Nutrición clínica con enfoque gentil para cuidar tu salud digestiva y metabólica",
   paragraph:
     "Permíteme guiarte para conocer tu cuerpo, de tal manera que logres nutrirlo física, mental y socialmente, desde la libertad y la compasión, y así cuidar tu bienestar con un abordaje 100% integral y personal.",
   primaryCta: {
@@ -128,7 +149,7 @@ export const hero = {
 };
 
 export const philosophy = {
-  label: "Nutrición gentil",
+  label: "NUTRICIÓN GENTIL + DIVERSIDAD DE TALLAS + CONSCIENCIA SOCIAL",
   title: "La salud sostenible empieza cuando tu alimentación se adapta a ti",
   paragraphs: [
     "Se basa en escuchar e interpretar las señales internas de tu cuerpo, en lugar de seguir reglas rígidas o dietas restrictivas.",
@@ -136,7 +157,7 @@ export const philosophy = {
     "Adoptarás conductas saludables de autocuidado sin necesidad de enfocar la atención en el peso."
   ],
   aside:
-    "Cuando se alinean tu sentir, pensar y actuar, la nutrición deja de ser una obligación y se convierte en algo natural dentro de tu vida diaria."
+    "Nuestro objetivo no es perseguir reglas perfectas, sino construir una relación más amable, realista y sostenible con tu alimentación, tu cuerpo y tu bienestar"
 };
 
 export const processSteps: ProcessStep[] = [
@@ -153,15 +174,15 @@ export const processSteps: ProcessStep[] = [
   },
   {
     number: "03",
-    title: "Propositiva",
+    title: "Proposito",
     description:
       "Te ofreceré recomendaciones nutricionales adaptadas a tus necesidades, tu entorno y tu acceso."
   },
   {
     number: "04",
-    title: "Respetuosa a la diversidad",
+    title: "Respetuoso a la diversidad",
     description:
-      "Tu proceso se construirá con respeto a tu historia, tu contexto y tu diversidad."
+      "Construiremos tu mejor camino de autocuidado con respeto a tu historia y tu contexto individual"
   }
 ];
 
@@ -213,7 +234,13 @@ export const testimonials: Testimonial[] = [
       "A partir de las recomendaciones de Monse para apoyar mi tratamiento de síndrome de intestino irritable, me di cuenta de que mi alimentación podía ser mucho más variada, disfrutar mi comida y así sentirme bien.",
     author: "Cointa",
     age: 79
-  }
+  },
+  {
+    quote:
+      "Agradezco mucho las sesiones que tuve con Monse, fue una gran guía en mi cambio y mejora de hábitos.",
+    author: "Elizabeth",
+    age: 26
+  },
 ];
 
 export const specialties: Specialty[] = [
@@ -234,7 +261,7 @@ export const closingCta = {
   bullets: [
     "A tu propio ritmo",
     "Escucha activa",
-    "Propositiva",
+    "Proposito",
     "Respetando la diversidad"
   ],
   button: {
@@ -282,7 +309,7 @@ export const appointmentPage = {
     "Si no aparece un horario útil para ti, escribe por WhatsApp.",
   calendarTitle: "Calendario para agendar consulta con Monserrat Herrera",
   calendarSrc:
-    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3znck4HPTRTMSY5s363FhouX2Zko3b9a8qAWf2ioV5LAHIJ_EaLLfRPeYKTabwN1KBWOSNCw0c?gv=true",
+    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1124fnuHxCBZnslCj-WCOI4fle_fB9TYGZ83HmDdHXrdOTWFSEUSPKr6JZBRephu0TWjQX2egG?gv=true",
   primaryCta: {
     label: "Volver al inicio",
     href: "/"
@@ -291,6 +318,41 @@ export const appointmentPage = {
     label: "Escríbeme por WhatsApp",
     href: whatsappConsultationCta.href
   }
+};
+
+export const credentialsPage = {
+  title: "Credenciales y respaldo profesional",
+  description:
+    "Bienvenida a un espacio donde puedes conocer el respaldo profesional de Monserrat Herrera y revisar sus credenciales en un solo lugar.",
+  label: "Archivo profesional",
+  eyebrow: "Bienvenida a este espacio de respaldo profesional",
+  intro:
+    "Aquí encontrarás una selección clara y ordenada de credenciales, constancias y documentos que respaldan mi formación y práctica profesional. La intención es que puedas recorrer este archivo con tranquilidad, conocer mejor mi trayectoria y revisar cada pieza con mayor detalle cuando lo necesites.",
+  archiveHeading: "Lo que encontrarás aquí",
+  archiveIntro:
+    "Esta galería reúne los documentos que respaldan mi formación y práctica profesional. Puedes abrir cualquier pieza para verla en grande y navegar el archivo completo a tu ritmo.",
+  portrait: {
+    image: "/images/credentials/portrait.webp",
+    alt: "Retrato de Monserrat Herrera para la página de credenciales"
+  },
+  primaryCta: {
+    label: "Volver al inicio",
+    href: "/"
+  },
+  secondaryCta: {
+    label: "Escríbeme por WhatsApp",
+    href: whatsappConsultationCta.href
+  },
+  galleryLabels: {
+    gridLabel: "Galería de documentos de respaldo profesional",
+    openItemPrefix: "Abrir vista ampliada de",
+    dialogLabel: "Vista ampliada del documento",
+    counterLabel: "Documento",
+    closeLabel: "Cerrar vista ampliada",
+    previousLabel: "Ver documento anterior",
+    nextLabel: "Ver documento siguiente",
+    previewHint: "Toca o da clic para ampliar"
+  } satisfies CredentialsGalleryLabels
 };
 
 export const buildHomeStructuredData = () => {
