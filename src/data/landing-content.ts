@@ -153,15 +153,15 @@ export const processSteps: ProcessStep[] = [
   },
   {
     number: "03",
-    title: "Propositiva",
+    title: "Proposito",
     description:
       "Te ofreceré recomendaciones nutricionales adaptadas a tus necesidades, tu entorno y tu acceso."
   },
   {
     number: "04",
-    title: "Respetuosa a la diversidad",
+    title: "Respetuoso a la diversidad",
     description:
-      "Tu proceso se construirá con respeto a tu historia, tu contexto y tu diversidad."
+      "Construiremos tu mejor camino de autocuidado con respeto a tu historia y tu contexto individual"
   }
 ];
 
@@ -240,7 +240,7 @@ export const closingCta = {
   bullets: [
     "A tu propio ritmo",
     "Escucha activa",
-    "Propositiva",
+    "Proposito",
     "Respetando la diversidad"
   ],
   button: {
