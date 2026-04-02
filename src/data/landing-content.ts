@@ -66,7 +66,7 @@ const compactObject = <T extends Record<string, unknown>>(value: T): T =>
   ) as T;
 
 export const siteMeta = {
-  title: "Nutrióloga clínica digestiva y metabólica | Monserrat Herrera",
+  title: "Nutrición con conexión | Monserrat Herrera",
   description:
     "Consulta de nutrición clínica con enfoque humano para salud digestiva, metabólica y cambio de hábitos. Agenda en línea con Monserrat Herrera.",
   siteName: "Monserrat Herrera | Nutrición con conexión",
@@ -114,7 +114,7 @@ export const hero = {
   brand: "Monserrat Herrera",
   eyebrow: "Nutrición con conexión",
   headline:
-    "Nutrición clínica con enfoque humano para cuidar tu salud digestiva y metabólica",
+    "Nutrición clínica con enfoque gentil para cuidar tu salud digestiva y metabólica",
   paragraph:
     "Permíteme guiarte para conocer tu cuerpo, de tal manera que logres nutrirlo física, mental y socialmente, desde la libertad y la compasión, y así cuidar tu bienestar con un abordaje 100% integral y personal.",
   primaryCta: {
@@ -128,7 +128,7 @@ export const hero = {
 };
 
 export const philosophy = {
-  label: "Nutrición gentil",
+  label: "NUTRICIÓN GENTIL + DIVERSIDAD DE TALLAS + CONSCIENCIA SOCIAL",
   title: "La salud sostenible empieza cuando tu alimentación se adapta a ti",
   paragraphs: [
     "Se basa en escuchar e interpretar las señales internas de tu cuerpo, en lugar de seguir reglas rígidas o dietas restrictivas.",
@@ -136,7 +136,7 @@ export const philosophy = {
     "Adoptarás conductas saludables de autocuidado sin necesidad de enfocar la atención en el peso."
   ],
   aside:
-    "Cuando se alinean tu sentir, pensar y actuar, la nutrición deja de ser una obligación y se convierte en algo natural dentro de tu vida diaria."
+    "Nuestro objetivo no es perseguir reglas perfectas, sino construir una relación más amable, realista y sostenible con tu alimentación, tu cuerpo y tu bienestar"
 };
 
 export const processSteps: ProcessStep[] = [
