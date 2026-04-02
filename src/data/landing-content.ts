@@ -36,6 +36,26 @@ export type SocialItem = {
   platform: "instagram" | "tiktok";
 };
 
+export type CredentialsGalleryLabels = {
+  gridLabel: string;
+  openItemPrefix: string;
+  dialogLabel: string;
+  counterLabel: string;
+  closeLabel: string;
+  previousLabel: string;
+  nextLabel: string;
+  previewHint: string;
+};
+
+export type CredentialDocument = {
+  title: string;
+  image: string;
+  alt: string;
+  kind: "image" | "pdf";
+  extension: string;
+  note?: string;
+};
+
 const siteUrl = (import.meta.env.SITE_URL ?? "").replace(/\/$/, "");
 
 const toAbsoluteUrl = (path: string) => {
@@ -297,6 +317,41 @@ export const appointmentPage = {
     label: "Escríbeme por WhatsApp",
     href: whatsappConsultationCta.href
   }
+};
+
+export const credentialsPage = {
+  title: "Credenciales y respaldo profesional",
+  description:
+    "Bienvenida a un espacio donde puedes conocer el respaldo profesional de Monserrat Herrera y revisar sus credenciales en un solo lugar.",
+  label: "Archivo profesional",
+  eyebrow: "Bienvenida a este espacio de respaldo profesional",
+  intro:
+    "Aquí encontrarás una selección clara y ordenada de credenciales, constancias y documentos que respaldan mi formación y práctica profesional. La intención es que puedas recorrer este archivo con tranquilidad, conocer mejor mi trayectoria y revisar cada pieza con mayor detalle cuando lo necesites.",
+  archiveHeading: "Lo que encontrarás aquí",
+  archiveIntro:
+    "Esta galería reúne los documentos que respaldan mi formación y práctica profesional. Puedes abrir cualquier pieza para verla en grande y navegar el archivo completo a tu ritmo.",
+  portrait: {
+    image: "/images/credentials/portrait.webp",
+    alt: "Retrato de Monserrat Herrera para la página de credenciales"
+  },
+  primaryCta: {
+    label: "Volver al inicio",
+    href: "/"
+  },
+  secondaryCta: {
+    label: "Escríbeme por WhatsApp",
+    href: whatsappConsultationCta.href
+  },
+  galleryLabels: {
+    gridLabel: "Galería de documentos de respaldo profesional",
+    openItemPrefix: "Abrir vista ampliada de",
+    dialogLabel: "Vista ampliada del documento",
+    counterLabel: "Documento",
+    closeLabel: "Cerrar vista ampliada",
+    previousLabel: "Ver documento anterior",
+    nextLabel: "Ver documento siguiente",
+    previewHint: "Toca o da clic para ampliar"
+  } satisfies CredentialsGalleryLabels
 };
 
 export const buildHomeStructuredData = () => {
