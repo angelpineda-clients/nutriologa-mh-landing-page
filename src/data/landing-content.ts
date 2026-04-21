@@ -153,11 +153,11 @@ export const philosophy = {
   title: "La salud sostenible empieza cuando tu alimentación se adapta a ti",
   paragraphs: [
     "Se basa en escuchar e interpretar las señales internas de tu cuerpo, en lugar de seguir reglas rígidas o dietas restrictivas.",
-    "Nuestro objetivo no es perseguir reglas perfectas, sino construir una relación más clara, amable y realista con tu alimentación, tu cuerpo y tu bienestar.",
+    "Nuestro objetivo no es perseguir reglas perfectas, sino construir una relación más amable, realista y sostenible con tu alimentación, tu cuerpo y tu bienestar",
     "Adoptarás conductas saludables de autocuidado sin necesidad de enfocar la atención en el peso."
   ],
   aside:
-    "Nuestro objetivo no es perseguir reglas perfectas, sino construir una relación más amable, realista y sostenible con tu alimentación, tu cuerpo y tu bienestar"
+    "Cuando se alinean tu sentir, pensar y actuar, la nutrición deja de ser una obligación y se convierte en algo natural dentro detu vida diaria"
 };
 
 export const processSteps: ProcessStep[] = [
@@ -174,7 +174,7 @@ export const processSteps: ProcessStep[] = [
   },
   {
     number: "03",
-    title: "Proposito",
+    title: "Propositivo",
     description:
       "Te ofreceré recomendaciones nutricionales adaptadas a tus necesidades, tu entorno y tu acceso."
   },
@@ -261,7 +261,7 @@ export const closingCta = {
   bullets: [
     "A tu propio ritmo",
     "Escucha activa",
-    "Proposito",
+    "Propositivo",
     "Respetando la diversidad"
   ],
   button: {
@@ -288,7 +288,7 @@ export const socialItems: SocialItem[] = [
 ];
 
 export const footerLinks: NavItem[] = [
-  { label: "Nutrición gentil", href: "#filosofia" },
+  { label: "Modelo de atención", href: "#filosofia" },
   { label: "Proceso", href: "#proceso" },
   { label: "Servicios", href: "#servicios" },
   { label: "Especialidades", href: "#especialidades" }
