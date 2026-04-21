@@ -153,11 +153,11 @@ export const philosophy = {
   title: "La salud sostenible empieza cuando tu alimentación se adapta a ti",
   paragraphs: [
     "Se basa en escuchar e interpretar las señales internas de tu cuerpo, en lugar de seguir reglas rígidas o dietas restrictivas.",
-    "Nuestro objetivo no es perseguir reglas perfectas, sino construir una relación más clara, amable y realista con tu alimentación, tu cuerpo y tu bienestar.",
+    "Nuestro objetivo no es perseguir reglas perfectas, sino construir una relación más amable, realista y sostenible con tu alimentación, tu cuerpo y tu bienestar",
     "Adoptarás conductas saludables de autocuidado sin necesidad de enfocar la atención en el peso."
   ],
   aside:
-    "Nuestro objetivo no es perseguir reglas perfectas, sino construir una relación más amable, realista y sostenible con tu alimentación, tu cuerpo y tu bienestar"
+    "Cuando se alinean tu sentir, pensar y actuar, la nutrición deja de ser una obligación y se convierte en algo natural dentro detu vida diaria"
 };
 
 export const processSteps: ProcessStep[] = [
@@ -174,7 +174,7 @@ export const processSteps: ProcessStep[] = [
   },
   {
     number: "03",
-    title: "Proposito",
+    title: "Propositivo",
     description:
       "Te ofreceré recomendaciones nutricionales adaptadas a tus necesidades, tu entorno y tu acceso."
   },
@@ -261,7 +261,7 @@ export const closingCta = {
   bullets: [
     "A tu propio ritmo",
     "Escucha activa",
-    "Proposito",
+    "Propositivo",
     "Respetando la diversidad"
   ],
   button: {
@@ -288,7 +288,7 @@ export const socialItems: SocialItem[] = [
 ];
 
 export const footerLinks: NavItem[] = [
-  { label: "Nutrición gentil", href: "#filosofia" },
+  { label: "Modelo de atención", href: "#filosofia" },
   { label: "Proceso", href: "#proceso" },
   { label: "Servicios", href: "#servicios" },
   { label: "Especialidades", href: "#especialidades" }
@@ -324,10 +324,13 @@ export const credentialsPage = {
   title: "Credenciales y respaldo profesional",
   description:
     "Bienvenida a un espacio donde puedes conocer el respaldo profesional de Monserrat Herrera y revisar sus credenciales en un solo lugar.",
-  label: "Archivo profesional",
-  eyebrow: "Bienvenida a este espacio de respaldo profesional",
-  intro:
-    "Aquí encontrarás una selección clara y ordenada de credenciales, constancias y documentos que respaldan mi formación y práctica profesional. La intención es que puedas recorrer este archivo con tranquilidad, conocer mejor mi trayectoria y revisar cada pieza con mayor detalle cuando lo necesites.",
+  label: "MONSERRAT HERRERA",
+  eyebrow: "Archivo profesional",
+  intro: {
+    finding: "Aquí encontrarás una selección clara y ordenada de credenciales, constancias y documentos que respaldan mi formación y práctica profesional.",
+    intention:
+      "La intención es que puedas recorrer este archivo con tranquilidad, conocer mejor mi trayectoria y revisar cada pieza con mayor detalle cuando lo necesites."
+  },
   archiveHeading: "Lo que encontrarás aquí",
   archiveIntro:
     "Esta galería reúne los documentos que respaldan mi formación y práctica profesional. Puedes abrir cualquier pieza para verla en grande y navegar el archivo completo a tu ritmo.",
