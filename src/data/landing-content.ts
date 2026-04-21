@@ -324,10 +324,13 @@ export const credentialsPage = {
   title: "Credenciales y respaldo profesional",
   description:
     "Bienvenida a un espacio donde puedes conocer el respaldo profesional de Monserrat Herrera y revisar sus credenciales en un solo lugar.",
-  label: "Archivo profesional",
-  eyebrow: "Bienvenida a este espacio de respaldo profesional",
-  intro:
-    "Aquí encontrarás una selección clara y ordenada de credenciales, constancias y documentos que respaldan mi formación y práctica profesional. La intención es que puedas recorrer este archivo con tranquilidad, conocer mejor mi trayectoria y revisar cada pieza con mayor detalle cuando lo necesites.",
+  label: "MONSERRAT HERRERA",
+  eyebrow: "Archivo profesional",
+  intro: {
+    finding: "Aquí encontrarás una selección clara y ordenada de credenciales, constancias y documentos que respaldan mi formación y práctica profesional.",
+    intention:
+      "La intención es que puedas recorrer este archivo con tranquilidad, conocer mejor mi trayectoria y revisar cada pieza con mayor detalle cuando lo necesites."
+  },
   archiveHeading: "Lo que encontrarás aquí",
   archiveIntro:
     "Esta galería reúne los documentos que respaldan mi formación y práctica profesional. Puedes abrir cualquier pieza para verla en grande y navegar el archivo completo a tu ritmo.",
