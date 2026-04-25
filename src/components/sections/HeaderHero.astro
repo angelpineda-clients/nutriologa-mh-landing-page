@@ -104,9 +104,9 @@ import "../../styles/sections/header-hero.css";
 
       <div class="hero__actions">
         <Button href={hero.primaryCta.href}>Agendar</Button>
-        <a class="hero__secondary-action" href={hero.secondaryCta.href} rel="noopener" target="_blank">
+        <Button href={hero.secondaryCta.href} variant="ghost" className="hero__secondary-action">
           {hero.secondaryCta.label}
-        </a>
+        </Button>
       </div>
     </Reveal>
 

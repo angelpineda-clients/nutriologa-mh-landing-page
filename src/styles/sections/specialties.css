@@ -62,9 +62,30 @@
   box-shadow: 0 0 0 0.24rem rgba(191, 158, 130, 0.12);
 }
 
-.specialties__pill:last-child {
+.specialties__pill--cta {
   background: rgba(244, 231, 216, 0.88);
   border-color: rgba(160, 119, 84, 0.22);
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.specialties__pill--cta:hover {
+  background: rgba(240, 224, 206, 0.95);
+  border-color: rgba(160, 119, 84, 0.38);
+  transform: translateY(-1px);
+}
+
+.specialties__pill--cta a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.specialties__pill--cta:focus-visible {
+  outline: 2px solid rgba(160, 119, 84, 0.4);
+  outline-offset: 2px;
 }
 
 .specialties__footnote {
@@ -112,7 +133,7 @@
 
 .specialties__desc-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
   gap: 2rem 2.5rem;
   margin: 0;
   padding: 0;
@@ -144,5 +165,15 @@
 
   .specialties__desc-list {
     gap: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .specialties__pill--cta {
+    transition: none;
+  }
+
+  .specialties__pill--cta:hover {
+    transform: none;
   }
 }

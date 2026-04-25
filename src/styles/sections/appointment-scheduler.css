@@ -227,7 +227,8 @@
   height: 1040px;
   border: 0;
   border-radius: calc(var(--radius-card) - 0.75rem);
-  background: #ffffff;
+  background: #fdf8f3;
+  filter: brightness(0.97) sepia(0.10) saturate(0.88);
 }
 
 @media (min-width: 920px) {

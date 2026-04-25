@@ -1,5 +1,5 @@
 ---
-import { specialties } from "../../data/landing-content";
+import { specialties, whatsappConsultationCta } from "../../data/landing-content";
 import { Reveal } from "../ui/Reveal";
 
 import "../../styles/sections/specialties.css";
@@ -20,9 +20,22 @@ import "../../styles/sections/specialties.css";
     <Reveal client:visible className="specialties__panel" delay={0.06}>
       <ul class="specialties__grid" role="list">
         {
-          specialties.map((topic) => (
-            <li class="specialties__pill">{topic.label}</li>
-          ))
+          specialties.map((topic) =>
+            topic.label === "Otro*" ? (
+              <li class="specialties__pill specialties__pill--cta">
+                <a
+                  href={whatsappConsultationCta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Cuéntame tu caso por WhatsApp"
+                >
+                  {topic.label}
+                </a>
+              </li>
+            ) : (
+              <li class="specialties__pill">{topic.label}</li>
+            )
+          )
         }
       </ul>
       <p class="specialties__footnote">
