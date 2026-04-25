@@ -19,12 +19,19 @@
   margin-top: 2rem;
 }
 
-.philosophy__paragraphs p,
-.philosophy__aside {
+.philosophy__paragraphs p {
   margin: 0;
   color: var(--color-text-muted);
   font-size: 1rem;
   line-height: 1.9;
+}
+
+.philosophy__aside {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1.025rem;
+  font-style: italic;
+  line-height: 1.85;
 }
 
 .philosophy__visual {
@@ -53,15 +60,17 @@
 .philosophy__aside {
   width: 100%;
   margin-top: 1.25rem;
-  padding: 1.25rem 1.35rem;
+  padding: 1.25rem 1.35rem 1.25rem 1.6rem;
   border-radius: 1.5rem;
   background: rgba(253, 252, 252, 0.78);
   border: 1px solid rgba(176, 137, 104, 0.16);
+  border-left: 3px solid var(--color-accent);
 }
 
 @media (max-width: 960px) {
   .philosophy {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .philosophy__aside {

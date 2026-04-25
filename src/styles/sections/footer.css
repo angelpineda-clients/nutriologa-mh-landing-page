@@ -41,6 +41,18 @@
   line-height: 1.8;
 }
 
+.site-footer__cedula {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.site-footer__cedula strong {
+  color: var(--color-text-deep);
+  font-weight: 600;
+}
+
 .site-footer__contact-list {
   display: grid;
   gap: 0.55rem;
@@ -160,12 +172,19 @@
 }
 
 .site-footer__nav-block a {
+  font-size: 0.9rem;
   color: var(--color-text-muted);
   transition: color 180ms ease;
 }
 
 .site-footer__nav-block a:hover {
   color: var(--color-text-deep);
+}
+
+.site-footer__nav-block a:focus-visible {
+  outline: 2px solid rgba(160, 119, 84, 0.4);
+  outline-offset: 2px;
+  border-radius: 3px;
 }
 
 .site-footer__cta-block {
@@ -179,6 +198,13 @@
   line-height: 1.75;
 }
 
+.site-footer__copyright {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
 @media (max-width: 860px) {
   .site-footer__inner {
     grid-template-columns: 1fr;
@@ -186,5 +212,16 @@
 
   .site-footer__cta-block {
     justify-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer__contact-link,
+  .site-footer__nav-block a {
+    transition: none;
+  }
+
+  .site-footer__contact-link:hover .site-footer__contact-icon {
+    transform: none;
   }
 }

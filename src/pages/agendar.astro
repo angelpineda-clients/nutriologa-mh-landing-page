@@ -5,6 +5,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import {
   appointmentPage,
   buildAppointmentStructuredData,
+  professionalProfile,
   siteMeta
 } from "../data/landing-content";
 
@@ -12,7 +13,7 @@ const appointmentStructuredData = buildAppointmentStructuredData();
 ---
 
 <BaseLayout
-  title={`${appointmentPage.title} | ${siteMeta.siteName}`}
+  title={`${appointmentPage.title} | ${professionalProfile.name}`}
   description={appointmentPage.description}
   pathname="/agendar"
   image={siteMeta.image}
