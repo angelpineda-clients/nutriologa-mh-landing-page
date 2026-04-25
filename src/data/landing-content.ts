@@ -26,6 +26,7 @@ export type Testimonial = {
 
 export type Specialty = {
   label: string;
+  icon: string;
   description?: string;
 };
 
@@ -257,40 +258,47 @@ export const testimonials: Testimonial[] = [
 export const specialties: Specialty[] = [
   {
     label: "Resistencia a la insulina",
+    icon: "🩸",
     description:
       "La resistencia a la insulina afecta la forma en que tu cuerpo procesa la glucosa, lo que puede generar fatiga, antojos intensos y dificultad para mantener un peso estable. Trabajamos estrategias alimenticias basadas en evidencia para mejorar la sensibilidad a la insulina — sin dietas extremas ni restricciones imposibles de sostener en el tiempo."
   },
   {
     label: "Diabetes tipo 2",
+    icon: "📊",
     description:
       "El manejo nutricional de la diabetes tipo 2 busca estabilizar la glucosa en sangre mediante cambios alimenticios sostenibles. Analizamos tus hábitos actuales, tu contexto y tus preferencias para construir un plan que se integre de forma realista a tu día a día, en coordinación con tu equipo médico."
   },
   {
     label: "Hipotiroidismo",
+    icon: "⚡",
     description:
       "El hipotiroidismo puede afectar tu energía, tu metabolismo y tu bienestar general. La nutrición no reemplaza el tratamiento médico, pero puede complementarlo de forma significativa. Trabajamos una alimentación que respete tu función tiroidea y mejore tu calidad de vida de manera integral."
   },
   {
     label: "Alteraciones digestivas",
+    icon: "🌿",
     description:
       "El síndrome de intestino irritable, la gastritis, el reflujo y otras alteraciones digestivas responden bien a intervenciones nutricionales individualizadas. Identificamos los patrones que generan síntomas y construimos una alimentación más variada y placentera que favorezca tu bienestar digestivo."
   },
   {
     label: "Hipertensión",
+    icon: "🫀",
     description:
       "Una alimentación adecuada es uno de los pilares del manejo de la hipertensión. Diseñamos patrones alimenticios que ayuden a regular la presión arterial de forma progresiva — sin restricciones extremas — considerando tu historia clínica, tus preferencias y tu contexto de vida."
   },
   {
     label: "Alteraciones del colesterol",
+    icon: "💧",
     description:
       "Los niveles de colesterol y triglicéridos responden de manera importante a los hábitos alimenticios. Trabajamos una estrategia nutricional que mejore tu perfil de lípidos de forma sostenible, sin eliminar grupos de alimentos de forma innecesaria."
   },
   {
     label: "Cambio de hábitos",
+    icon: "🌱",
     description:
       "El cambio de hábitos alimenticios sostenible no se logra con fuerza de voluntad, sino con autoconocimiento y un plan adaptado a ti. Trabajamos a un ritmo respetuoso, con escucha activa, para que los cambios se integren de forma natural y duradera a tu estilo de vida."
   },
-  { label: "Otro*" }
+  { label: "Otro*", icon: "💬" }
 ];
 
 export const faqItems: FaqItem[] = [

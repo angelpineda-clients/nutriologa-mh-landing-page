@@ -17,46 +17,32 @@ import "../../styles/sections/specialties.css";
       </p>
     </Reveal>
 
-    <Reveal client:visible className="specialties__panel" delay={0.06}>
-      <ul class="specialties__grid" role="list">
-        {
-          specialties.map((topic) =>
-            topic.label === "Otro*" ? (
-              <li class="specialties__pill specialties__pill--cta">
-                <a
-                  href={whatsappConsultationCta.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Cuéntame tu caso por WhatsApp"
-                >
-                  {topic.label}
-                </a>
-              </li>
-            ) : (
-              <li class="specialties__pill">{topic.label}</li>
-            )
+    <Reveal client:visible className="specialties__cards" delay={0.06}>
+      {
+        specialties.map((topic) =>
+          topic.label === "Otro*" ? (
+            <a
+              class="specialties__card specialties__card--cta"
+              href={whatsappConsultationCta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Cuéntame tu caso por WhatsApp"
+            >
+              <span class="specialties__card-icon" aria-hidden="true">{topic.icon}</span>
+              <h3 class="specialties__card-title">¿Otro tema?</h3>
+              <p class="specialties__card-body">
+                Cuéntame tu caso — trabajamos juntas en lo que necesitas.
+              </p>
+            </a>
+          ) : (
+            <div class="specialties__card">
+              <span class="specialties__card-icon" aria-hidden="true">{topic.icon}</span>
+              <h3 class="specialties__card-title">{topic.label}</h3>
+              <p class="specialties__card-body">{topic.description}</p>
+            </div>
           )
-        }
-      </ul>
-      <p class="specialties__footnote">
-        <span class="specialties__footnote-mark">*</span>
-        Revisemos tu caso en específico
-      </p>
-    </Reveal>
-
-    <Reveal client:visible className="specialties__descriptions" delay={0.1}>
-      <dl class="specialties__desc-list">
-        {
-          specialties
-            .filter((topic) => topic.description)
-            .map((topic) => (
-              <div class="specialties__desc-item">
-                <dt class="specialties__desc-term">{topic.label}</dt>
-                <dd class="specialties__desc-body">{topic.description}</dd>
-              </div>
-            ))
-        }
-      </dl>
+        )
+      }
     </Reveal>
   </div>
 </section>

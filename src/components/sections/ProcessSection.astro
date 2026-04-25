@@ -2,6 +2,7 @@
 import { processCta, processSteps } from "../../data/landing-content";
 import { Button } from "../ui/Button";
 import { Reveal } from "../ui/Reveal";
+import { ProcessStepList } from "../ui/ProcessStepList";
 
 import "../../styles/sections/process.css";
 ---
@@ -26,28 +27,18 @@ import "../../styles/sections/process.css";
         </div>
       </Reveal>
 
-      <Reveal client:visible className="process__steps" delay={0.1} direction="left">
-        <ol>
-          {
-            processSteps.map((step) => (
-              <li class="process-step">
-                <p class="process-step__number">{step.number}</p>
-                <div>
-                  <h3 class="process-step__title">{step.title}</h3>
-                  <p class="process-step__description">{step.description}</p>
-                </div>
-              </li>
-            ))
-          }
-        </ol>
+      <div class="process__steps">
+        <ProcessStepList client:visible steps={processSteps} />
 
-        <div class="process__cta-wrap">
-          <p class="process__cta-intro">{processCta.intro}</p>
-          <Button href={processCta.button.href} className="process__cta">
-            {processCta.button.label}
-          </Button>
-        </div>
-      </Reveal>
+        <Reveal client:visible delay={0.7}>
+          <div class="process__cta-wrap">
+            <p class="process__cta-intro">{processCta.intro}</p>
+            <Button href={processCta.button.href} className="process__cta">
+              {processCta.button.label}
+            </Button>
+          </div>
+        </Reveal>
+      </div>
     </div>
   </div>
 </section>
