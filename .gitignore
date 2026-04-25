@@ -1,6 +1,11 @@
 # Dependencies
 /node_modules
 
+# Development files
+.playwright-mcp
+.claude
+
+
 # Build directory
 dist/
 

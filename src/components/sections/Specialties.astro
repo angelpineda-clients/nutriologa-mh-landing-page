@@ -30,5 +30,20 @@ import "../../styles/sections/specialties.css";
         Revisemos tu caso en específico
       </p>
     </Reveal>
+
+    <Reveal client:visible className="specialties__descriptions" delay={0.1}>
+      <dl class="specialties__desc-list">
+        {
+          specialties
+            .filter((topic) => topic.description)
+            .map((topic) => (
+              <div class="specialties__desc-item">
+                <dt class="specialties__desc-term">{topic.label}</dt>
+                <dd class="specialties__desc-body">{topic.description}</dd>
+              </div>
+            ))
+        }
+      </dl>
+    </Reveal>
   </div>
 </section>

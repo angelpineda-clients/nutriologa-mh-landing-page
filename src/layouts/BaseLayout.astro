@@ -10,6 +10,7 @@ type Props = {
   image?: string;
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
   noindex?: boolean;
+  preloadImageHref?: string;
 };
 
 const {
@@ -18,7 +19,8 @@ const {
   pathname = "/",
   image = siteMeta.image,
   structuredData,
-  noindex = false
+  noindex = false,
+  preloadImageHref
 } = Astro.props;
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, "");
@@ -40,10 +42,11 @@ const structuredDataBlocks = structuredData
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {preloadImageHref ? <link rel="preload" as="image" href={preloadImageHref} fetchpriority="high" /> : null}
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
     <meta name="googlebot" content={robots} />

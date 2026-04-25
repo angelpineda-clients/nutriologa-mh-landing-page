@@ -5,6 +5,7 @@ import ProcessSection from "../components/sections/ProcessSection.astro";
 import Services from "../components/sections/Services.astro";
 import Testimonials from "../components/sections/Testimonials.astro";
 import Specialties from "../components/sections/Specialties.astro";
+import FaqSection from "../components/sections/FaqSection.astro";
 import ClosingCta from "../components/sections/ClosingCta.astro";
 import SocialSection from "../components/sections/SocialSection.astro";
 import SiteFooter from "../components/sections/SiteFooter.astro";
@@ -21,6 +22,7 @@ const homeStructuredData = buildHomeStructuredData();
   pathname="/"
   image={siteMeta.image}
   structuredData={homeStructuredData}
+  preloadImageHref="/images/hero-portrait.webp"
 >
   <main class="page">
     <HeaderHero />
@@ -29,6 +31,7 @@ const homeStructuredData = buildHomeStructuredData();
     <Services />
     <Testimonials />
     <Specialties />
+    <FaqSection />
     <ClosingCta />
     <SocialSection />
   </main>

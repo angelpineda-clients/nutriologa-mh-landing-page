@@ -1,0 +1,28 @@
+---
+import { faqItems } from "../../data/landing-content";
+import { Reveal } from "../ui/Reveal";
+
+import "../../styles/sections/faq.css";
+---
+
+<section class="faq section" id="preguntas">
+  <div class="shell">
+    <Reveal client:visible className="faq__intro">
+      <p class="section-label">Preguntas frecuentes</p>
+      <h2 class="section-title">¿Tienes dudas?</h2>
+    </Reveal>
+
+    <Reveal client:visible className="faq__list" delay={0.06}>
+      <dl class="faq__items">
+        {
+          faqItems.map((item) => (
+            <div class="faq__item">
+              <dt class="faq__question">{item.question}</dt>
+              <dd class="faq__answer">{item.answer}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </Reveal>
+  </div>
+</section>
